@@ -31,6 +31,8 @@ import { LoginComponent } from './login/login.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { MatiereComponent } from './pages/matiere/matiere.component';
 import { EtudiantComponent } from './pages/etudiant/etudiant.component';
+import { NavbarComponent } from './layouts/navbar/navbar.component';
+import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { EtudiantComponent } from './pages/etudiant/etudiant.component';
     EditAssignmentComponent,
     LoginComponent,
     MatiereComponent,
-    EtudiantComponent
+    EtudiantComponent,
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
