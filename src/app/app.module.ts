@@ -18,15 +18,15 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
-import { AssignmentsComponent } from './assignments/assignments.component';
+import { AssignmentsComponent } from './pages/assignements/assignments.component';
 import { RenduDirective } from './shared/rendu.directive';
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
-import { AssignmentDetailComponent } from './assignments/assignment-detail/assignment-detail.component';
-import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
+import { AssignmentDetailComponent } from './pages/assignements/assignment-detail/assignment-detail.component';
+import { AddAssignmentComponent } from './pages/assignements/add-assignment/add-assignment.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
-import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
+import { EditAssignmentComponent } from './pages/assignements/edit-assignment/edit-assignment.component';
 import { LoginComponent } from './login/login.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { MatiereComponent } from './matiere/matiere.component';

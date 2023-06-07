@@ -1,9 +1,9 @@
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
-import {AssignmentsComponent} from "./assignments/assignments.component";
-import {AddAssignmentComponent} from "./assignments/add-assignment/add-assignment.component";
-import {AssignmentDetailComponent} from "./assignments/assignment-detail/assignment-detail.component";
-import {EditAssignmentComponent} from "./assignments/edit-assignment/edit-assignment.component";
+import {AssignmentsComponent} from "./pages/assignements/assignments.component";
+import {AddAssignmentComponent} from "./pages/assignements/add-assignment/add-assignment.component";
+import {AssignmentDetailComponent} from "./pages/assignements/assignment-detail/assignment-detail.component";
+import {EditAssignmentComponent} from "./pages/assignements/edit-assignment/edit-assignment.component";
 import {authGuard} from "./shared/auth.guard";
 import {LoginComponent} from "./login/login.component";
 import { EtudiantComponent } from "./etudiant/etudiant.component";
