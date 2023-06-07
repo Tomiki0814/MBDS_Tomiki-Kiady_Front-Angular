@@ -6,8 +6,8 @@ import {AssignmentDetailComponent} from "./pages/assignements/assignment-detail/
 import {EditAssignmentComponent} from "./pages/assignements/edit-assignment/edit-assignment.component";
 import {authGuard} from "./shared/auth.guard";
 import {LoginComponent} from "./login/login.component";
-import { EtudiantComponent } from "./etudiant/etudiant.component";
-import { MatiereComponent } from "./matiere/matiere.component";
+import { EtudiantComponent } from "./pages/etudiant/etudiant.component";
+import { MatiereComponent } from "./pages/matiere/matiere.component";
 
 const routes: Routes = [
   {

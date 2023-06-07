@@ -29,8 +29,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { EditAssignmentComponent } from './pages/assignements/edit-assignment/edit-assignment.component';
 import { LoginComponent } from './login/login.component';
 import {AppRoutingModule} from "./app-routing.module";
-import { MatiereComponent } from './matiere/matiere.component';
-import { EtudiantComponent } from './etudiant/etudiant.component';
+import { MatiereComponent } from './pages/matiere/matiere.component';
+import { EtudiantComponent } from './pages/etudiant/etudiant.component';
 
 
 @NgModule({
