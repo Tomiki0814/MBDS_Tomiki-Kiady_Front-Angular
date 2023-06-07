@@ -6,6 +6,8 @@ import {AssignmentDetailComponent} from "./assignments/assignment-detail/assignm
 import {EditAssignmentComponent} from "./assignments/edit-assignment/edit-assignment.component";
 import {authGuard} from "./shared/auth.guard";
 import {LoginComponent} from "./login/login.component";
+import { EtudiantComponent } from "./etudiant/etudiant.component";
+import { MatiereComponent } from "./matiere/matiere.component";
 
 const routes: Routes = [
   {
@@ -32,6 +34,14 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'etudiant',
+    component: EtudiantComponent
+  },
+  {
+    path: 'matiere',
+    component: MatiereComponent
   }
 ]
 
