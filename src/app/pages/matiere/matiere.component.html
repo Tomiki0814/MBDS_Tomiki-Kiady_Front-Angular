@@ -1,1 +1,18 @@
-<p>matiere works!</p>
+<table class="table">
+  <thead>
+  <tr>
+
+    <th scope="col">matiere</th>
+    <th scope="col">image</th>
+    <th scope="col">prof</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let etudiant of matieres ">
+    <td>{{etudiant.nom}}</td>
+    <td>{{etudiant.image}}</td>
+    <td>{{etudiant.prof}}</td>
+  </tr>
+
+  </tbody>
+</table>

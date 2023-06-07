@@ -25,7 +25,6 @@ export class AssignmentsComponent implements OnInit {
   prevPage: number = 0;
   hasNextPage: boolean = false;
   nextPage: number = 0;
-;
 
   @ViewChild('scroller') scroller!: CdkVirtualScrollViewport;
 

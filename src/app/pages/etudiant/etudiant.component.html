@@ -1,1 +1,18 @@
-<p>etudiant works!</p>
+<table class="table">
+  <thead>
+  <tr>
+
+    <th scope="col">Nom</th>
+    <th scope="col">Prenom</th>
+    <th scope="col">Sexe</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let etudiant of etudiants ">
+    <td>{{etudiant.nom}}</td>
+    <td>{{etudiant.prenom}}</td>
+    <td>{{etudiant.sexe}}</td>
+  </tr>
+
+  </tbody>
+</table>
