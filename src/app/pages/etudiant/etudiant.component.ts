@@ -12,6 +12,12 @@ import {Etudiant} from "./etudiant.model";
 export class EtudiantComponent implements OnInit {
 
   etudiants:Etudiant[] = [];
+  displayedColumns: string[] = [ 'nom','prenom','email','sexe' ];
+
+   // propriétés pour la pagination
+   page: number=0;
+   limit: number=10;
+   totalPages: number = 0;
   constructor(private EtudiantService:EtudiantsService) {
   }
 
@@ -26,10 +32,23 @@ export class EtudiantComponent implements OnInit {
   }
 
   getEtudiants(){
-    this.EtudiantService.getEtudiant().subscribe(data => {
-      this.etudiants = data;
-      console.log(this.etudiants);
+    this.EtudiantService.getEtudiant(this.page, this.limit).subscribe(data => {
+      this.etudiants = data.docs;
+      this.page = data.page-1;
+      this.limit = data.limit;
+      this.totalPages = data.totalDocs;
     })
+  }
+
+  // Pour mat-paginator
+  handlePage(event: any) {
+    console.log(event);
+
+    this.page = event.pageIndex+1;
+    this.limit = event.pageSize;
+    console.log("numPage="+this.page)
+    console.log("limitPage="+this.limit)
+    this.getEtudiants();
   }
 
 
