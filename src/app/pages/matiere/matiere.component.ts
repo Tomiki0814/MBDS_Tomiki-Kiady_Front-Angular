@@ -25,7 +25,7 @@ export class MatiereComponent implements OnInit  {
   getMatieres(){
     this.MatiereService.getMatiere().subscribe(data => {
       this.matieres = data.docs;
-      console.log(data);
+      console.log(data.docs);
     })
   }
 }

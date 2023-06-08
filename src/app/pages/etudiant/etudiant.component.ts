@@ -27,8 +27,8 @@ export class EtudiantComponent implements OnInit {
 
   getEtudiants(){
     this.EtudiantService.getEtudiant().subscribe(data => {
-      this.etudiants = data.docs;
-      console.log(data);
+      this.etudiants = data;
+      console.log(this.etudiants);
     })
   }
 
