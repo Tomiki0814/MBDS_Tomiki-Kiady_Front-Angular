@@ -34,7 +34,7 @@ export class EtudiantComponent implements OnInit {
   getEtudiants(){
     this.EtudiantService.getEtudiant(this.page, this.limit).subscribe(data => {
       this.etudiants = data.docs;
-      this.page = data.page-1;
+      this.page = data.page;
       this.limit = data.limit;
       this.totalPages = data.totalDocs;
     })
@@ -44,7 +44,7 @@ export class EtudiantComponent implements OnInit {
   handlePage(event: any) {
     console.log(event);
 
-    this.page = event.pageIndex+1;
+    this.page = event.pageIndex;
     this.limit = event.pageSize;
     console.log("numPage="+this.page)
     console.log("limitPage="+this.limit)
