@@ -33,6 +33,7 @@ import { MatiereComponent } from './pages/matiere/matiere.component';
 import { EtudiantComponent } from './pages/etudiant/etudiant.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
+import { NewassignmentsComponent } from './pages/newassignments/newassignments.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
     MatiereComponent,
     EtudiantComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    NewassignmentsComponent
   ],
   imports: [
     BrowserModule,

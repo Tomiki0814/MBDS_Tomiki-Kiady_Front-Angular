@@ -8,11 +8,12 @@ import {authGuard} from "./shared/auth.guard";
 import {LoginComponent} from "./login/login.component";
 import { EtudiantComponent } from "./pages/etudiant/etudiant.component";
 import { MatiereComponent } from "./pages/matiere/matiere.component";
+import { NewassignmentsComponent } from "./pages/newassignments/newassignments.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: AssignmentsComponent
+    component: NewassignmentsComponent
   },
   {
     path: 'home',

@@ -37,6 +37,7 @@ export class EtudiantComponent implements OnInit {
       this.page = data.page;
       this.limit = data.limit;
       this.totalPages = data.totalDocs;
+      
     })
   }
 
