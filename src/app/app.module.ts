@@ -17,6 +17,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { RenduDirective } from './shared/rendu.directive';
@@ -29,7 +30,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
 import { authGuard } from './shared/auth.guard';
-import { LoginComponent } from './login/login.component';  
+import { LoginComponent } from './login/login.component';
+import { ToolbarComponent } from './util_component/toolbar/toolbar/toolbar.component';
+import { SidebarComponent } from './util_component/sidebar/sidebar/sidebar.component';
 
 const routes: Routes = [
   {
@@ -66,7 +69,9 @@ const routes: Routes = [
     AssignmentDetailComponent,
     AddAssignmentComponent,
     EditAssignmentComponent,
-    LoginComponent
+    LoginComponent,
+    ToolbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +82,8 @@ const routes: Routes = [
     MatButtonModule, MatIconModule, MatDividerModule,
     MatInputModule, MatFormFieldModule, MatDatepickerModule,
     MatListModule, MatCardModule, MatCheckboxModule, MatSlideToggleModule,
-    MatTableModule, MatPaginatorModule
+    MatTableModule, MatPaginatorModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
