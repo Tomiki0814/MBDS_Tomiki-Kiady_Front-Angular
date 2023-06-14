@@ -9,12 +9,12 @@ import { AssignmentsService } from './shared/assignments.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  title = 'Application de gestion de devoirs à rendre';
   labelConnexion = "Se connecter";
   nom:string = "";
   currentRoute:string = "";
 
-  constructor(private authService:AuthService,
+  constructor(private authService:AuthService, 
               private router:Router,
               private assigmmentsService:AssignmentsService) {
     console.log(router.url);
@@ -25,8 +25,8 @@ export class AppComponent {
         this.currentRoute = event.url;
       }
     });
-
-
+    
+    
   }
 
   login() {
