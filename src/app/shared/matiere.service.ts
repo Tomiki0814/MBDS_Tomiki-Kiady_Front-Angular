@@ -10,7 +10,9 @@ import {Matiere} from "../pages/matiere/matiere.model";
 export class MatiereService {
 
   constructor(private http:HttpClient) {}
-  uri_api = 'http://localhost:8010/api/matiere';
+
+  //uri_api = 'http://localhost:8010/api/matiere';
+  uri_api = 'https://mbds-assignement-back-end-api.onrender.com/api/matiere';
 
   getMatiere():Observable<any> {
 

@@ -13,8 +13,8 @@ export class AssignmentsService {
 assignments:Assignment[] = []
   constructor(private loggingService:LoggingService,
     private http:HttpClient) { }
-
-    uri_api = 'http://localhost:8010/api/devoirs';
+  //uri_api = 'http://localhost:8010/api/devoirs';
+  uri_api = 'https://mbds-assignement-back-end-api.onrender.com/api/devoirs';
 
   getAssignments(page:number, limit:number):Observable<any> {
     // normalement on doit envoyer une requête HTTP
