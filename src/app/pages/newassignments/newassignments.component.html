@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom Etudiant</th>
+        <th scope="col">Matiere</th>
+        <th scope="col">Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <th scope="row">1</th>
+        <td>{{item.idEtudiant.nom}}</td>
+        <td>{{item.idMatiere.nom}}</td>
+        <td>{{item.note}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
