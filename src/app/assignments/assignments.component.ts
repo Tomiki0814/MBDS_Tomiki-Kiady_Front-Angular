@@ -1,6 +1,6 @@
 import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { Assignment } from './assignment.model';
-import { AssignmentsService } from '../../shared/assignments.service';
+import { AssignmentsService } from '../shared/assignments.service';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { filter, map, pairwise, tap, throttleTime } from 'rxjs';
 
@@ -25,13 +25,14 @@ export class AssignmentsComponent implements OnInit {
   prevPage: number = 0;
   hasNextPage: boolean = false;
   nextPage: number = 0;
+;
 
   @ViewChild('scroller') scroller!: CdkVirtualScrollViewport;
 
   constructor(private assignmentsService:AssignmentsService,
-              private ngZone: NgZone) {
+              private ngZone: NgZone) {    
   }
-
+  
   ngOnInit(): void {
     console.log("OnInit Composant instancié et juste avant le rendu HTML (le composant est visible dans la page HTML)");
     // exercice : regarder si il existe des query params
@@ -42,7 +43,7 @@ export class AssignmentsComponent implements OnInit {
     this.getAssignments();
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit() { 
     console.log("after view init");
 
     if(!this.scroller) return;
@@ -142,7 +143,7 @@ export class AssignmentsComponent implements OnInit {
   // Pour mat-paginator
   handlePage(event: any) {
     console.log(event);
-
+   
     this.page = event.pageIndex;
     this.limit = event.pageSize;
     this.getAssignments();
