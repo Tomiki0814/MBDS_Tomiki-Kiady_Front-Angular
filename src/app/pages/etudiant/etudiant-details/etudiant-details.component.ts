@@ -14,6 +14,7 @@ export class EtudiantDetailsComponent implements OnInit {
   listeDevoirs:any[] = [];
   etudiant ="";
 
+
   constructor(private route: ActivatedRoute,private apiservice: ApiService) {
 
   }

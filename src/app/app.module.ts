@@ -38,6 +38,7 @@ import { EtudiantDetailsComponent } from './pages/etudiant/etudiant-details/etud
 import { MatiereDetailsComponent } from './pages/matiere/matiere-details/matiere-details.component';
 import { AddNewassignmentComponent } from './pages/newassignments/add-newassignment/add-newassignment.component';
 import { NewassignementDetailsComponent } from './pages/newassignments/newassignement-details/newassignement-details.component';
+import { EditNewassignmentComponent } from './pages/newassignments/edit-newassignment/edit-newassignment.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { NewassignementDetailsComponent } from './pages/newassignments/newassign
     EtudiantDetailsComponent,
     MatiereDetailsComponent,
     AddNewassignmentComponent,
-    NewassignementDetailsComponent
+    NewassignementDetailsComponent,
+    EditNewassignmentComponent
   ],
   imports: [
     BrowserModule,

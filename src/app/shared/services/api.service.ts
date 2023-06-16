@@ -23,7 +23,13 @@ export class ApiService {
     return this.http.post(this.domaine+url, entity);
   }
 
-  updateEntity(url:string, entity: any){
-
+  updateEntity(url:string,id:string, entity: any){
+      return this.http.put(this.domaine+url+id,entity);
   }
+
+  DeleteEntity(url:string,id:string){
+    return this.http.delete(this.domaine+url+id);
+  }
+
+
 }

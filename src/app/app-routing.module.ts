@@ -15,6 +15,7 @@ import {
 } from "./pages/newassignments/newassignement-details/newassignement-details.component";
 import {EtudiantDetailsComponent} from "./pages/etudiant/etudiant-details/etudiant-details.component";
 import {MatiereDetailsComponent} from "./pages/matiere/matiere-details/matiere-details.component";
+import {EditNewassignmentComponent} from "./pages/newassignments/edit-newassignment/edit-newassignment.component";
 
 const routes: Routes = [
 
@@ -28,9 +29,14 @@ const routes: Routes = [
     component: AddNewassignmentComponent
   },
   {
+    path: 'assignments/edit/:id',
+    component: EditNewassignmentComponent
+  },
+  {
     path: 'assignments/:id',
     component: NewassignementDetailsComponent
   },
+
 
   {
     path: 'add',
@@ -45,6 +51,7 @@ const routes: Routes = [
     component: EditAssignmentComponent,
     canActivate: [authGuard]
   },
+
   {
     path: 'login',
     component: LoginComponent

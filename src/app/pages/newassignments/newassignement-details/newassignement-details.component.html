@@ -31,5 +31,5 @@
   </tbody>
 </table>
 
-<button class="btn btn-warning">Modifier</button>
-<button class="btn btn-danger">Supprimer</button>
+<button class="btn btn-warning"><a routerLink="/assignments/edit/{{devoir._id}}">Modifier</a> </button>
+<button class="btn btn-danger" (click)="deleteDevoir()">Supprimer</button>
