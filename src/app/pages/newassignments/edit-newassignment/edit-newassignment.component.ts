@@ -15,6 +15,7 @@ export class EditNewassignmentComponent implements OnInit{
   urlEtudiant="all/etudiants";
   urlMatiere="all/matiere";
   urlDevoir="devoirs/";
+  urlUpdate="";
   matieres: any[] =[];
   etudiants: any[] = [];
   devoir = new Devoir("","", new Etudiant(),new Matiere());
@@ -39,11 +40,18 @@ export class EditNewassignmentComponent implements OnInit{
     })
   }
   getDevoir(){
+
     this.apiservice.getEntity(this.urlDevoir+this.id).subscribe(data => {
       if(data != null && data.length!=0){
           this.devoir = data[0];
-          console.log(this.devoir)
       }
     })
   }
+
+  editDevoir(){
+    this.apiservice.updateEntity(this.urlDevoir,this.id,this.devoir).subscribe( data =>{
+
+    })
+  }
+
 }

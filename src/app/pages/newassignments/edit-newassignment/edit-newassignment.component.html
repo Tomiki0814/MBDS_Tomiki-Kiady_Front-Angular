@@ -14,5 +14,5 @@
       <option *ngFor="let item of etudiants" value="{{item._id}}">{{item.nom}}</option>
     </select>
   </div>
-  <button class="btn btn-primary">Modifier</button>
+  <button class="btn btn-primary" (click)="editDevoir()">Modifier</button>
 </form>
