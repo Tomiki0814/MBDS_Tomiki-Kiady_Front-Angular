@@ -10,10 +10,13 @@ export class EtudiantsService {
 
   constructor(private http:HttpClient) {}
 
-  //uri_api = 'http://localhost:8010/api/etudiants';
-  uri_api = 'https://mbds-assignement-back-end-api.onrender.com/api/etudiants';
+  uri_api = 'http://localhost:8010/api/etudiants';
+  //uri_api = 'https://mbds-assignement-back-end-api.onrender.com/api/etudiants';
   getEtudiant(page:number, limit:number):Observable<any> {
-
     return this.http.get<Etudiant[]>(this.uri_api+ "?page=" + page + "&limit=" + limit);
   }
+  getEtudiantDetails(id:string){
+    return this.http.get<Etudiant[]>(this.uri_api+id);
+  }
+
 }
