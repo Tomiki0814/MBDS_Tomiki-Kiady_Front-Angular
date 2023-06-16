@@ -1,1 +1,31 @@
-<p>newassignement-details works!</p>
+<table class="table table-bordered">
+  <tbody>
+  <tr>
+    <th class="table-primary" scope="col">Etudiant</th>
+    <td class="table-primary">{{devoir.idEtudiant.nom}}</td>
+  </tr>
+  <tr>
+    <th class="table-primary" scope="row">Matiere</th>
+    <td class="table-primary">{{devoir.idMatiere.nom}}</td>
+  </tr>
+  <tr>
+    <th class="table-primary" scope="row">Date Rendu</th>
+    <td class="table-primary">$</td>
+  </tr>
+  <tr>
+    <th class="table-primary" scope="row">Note</th>
+    <td class="table-primary" colspan="2">{{devoir.note}}</td>
+  </tr>
+  <tr>
+    <th class="table-primary" scope="row">Remarque</th>
+    <td class="table-primary" colspan="2">{{devoir.remarque}}</td>
+  </tr>
+  <tr>
+    <th class="table-primary" scope="row">Prof</th>
+    <td class="table-primary" colspan="2">{{devoir.idMatiere.prof}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-warning">Modifier</button>
+<button class="btn btn-danger">Supprimer</button>
