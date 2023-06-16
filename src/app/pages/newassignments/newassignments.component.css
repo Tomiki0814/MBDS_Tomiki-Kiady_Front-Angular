@@ -1,8 +1,32 @@
-table {
-  background-color: #ffff;
+.content-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 100em;
+}
+.title-component {
+  margin-left: 1.5em;
+ }
+
+ table {
+   background-color: #ffff;
+   width: 100em;
+   margin: 1.5em;
+ }
+
+ th {
+   background-color:#023047;
+   color: #ffff;
+ }
+
+ .btn {
+  background-color:  #f3f0f0;
+  border-color: #219ebc;
+  color: #219ebc;
 }
 
-th {
-  background-color:#023047;
-  color: #ffff;
+.btn:hover {
+  background-color: #219ebc;
+  color: #f3f0f0;
 }
+
