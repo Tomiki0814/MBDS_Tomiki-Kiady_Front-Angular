@@ -1,5 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api.service";
+import {Devoir} from "../../../shared/models/Devoir.model";
+import {Matiere} from "../../../shared/models/Matiere.modele";
+import {Etudiant} from "../../../shared/models/Etudiant.model";
+import {ActivatedRoute} from "@angular/router";
+
 
 @Component({
   selector: 'app-newassignement-details',
@@ -9,19 +14,20 @@ import {ApiService} from "../../../shared/services/api.service";
 export class NewassignementDetailsComponent implements OnInit{
 
   url="devoirs/";
-  id="648c4f9195f2ea02e47debf3"
-  devoir:any;
-  constructor(private apiservice: ApiService) {
+  id=""
+  devoir = new Devoir("","", new Etudiant(),new Matiere());
+  constructor(private route: ActivatedRoute,private apiservice: ApiService) {
   }
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
     this.getData()
+
   }
 
   getData(){
     this.apiservice.getEntityDetails(this.url, this.id).subscribe( data =>{
         if(data!=null && data.length!=0){
           this.devoir = data[0]
-          console.log(data)
         }
     })
   }

@@ -1,34 +1,37 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-matiere-details',
   templateUrl: './matiere-details.component.html',
   styleUrls: ['./matiere-details.component.css']
 })
-export class MatiereDetailsComponent implements OnInit{
+export class MatiereDetailsComponent implements OnInit {
 
-  url="findbyMatiere/";
-  id="648044cfe9d1a2c72fffeac0"
-  listeDevoirs:any[] =[];
-  constructor(private apiservice: ApiService) {
+  url = "findbyMatiere/";
+  id = ""
+  listeDevoirs: any[] = [];
+  matiere = ""
+
+  constructor(private route: ActivatedRoute, private apiservice: ApiService) {
 
   }
+
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
     this.getDetailsMatiere()
   }
 
-  getDetailsMatiere(){
-  this.apiservice.getEntityDetails(this.url,this.id).subscribe(data => {
-    this.listeDevoirs = data
-  })
-
-  }
-
-  getDevoirMatiere(){
-    this.apiservice.getEntityDetails(this.url,this.id).subscribe(data => {
+  getDetailsMatiere() {
+    this.apiservice.getEntityDetails(this.url, this.id).subscribe(data => {
+      this.listeDevoirs = data
+      if (data.length != 0) {
+        this.matiere = data[0].idMatiere.nom
+      }
 
     })
-    console.log("tes");
+
   }
+
 }

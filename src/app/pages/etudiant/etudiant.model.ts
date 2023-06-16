@@ -4,5 +4,9 @@ export class Etudiant {
   prenom!: string;
   email!: string;
   sexe!: string;
+
+
+  constructor() {
+  }
 }
 
