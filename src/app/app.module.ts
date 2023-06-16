@@ -34,6 +34,8 @@ import { EtudiantComponent } from './pages/etudiant/etudiant.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { NewassignmentsComponent } from './pages/newassignments/newassignments.component';
+import { EtudiantDetailsComponent } from './pages/etudiant/etudiant-details/etudiant-details.component';
+import { MatiereDetailsComponent } from './pages/matiere/matiere-details/matiere-details.component';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { NewassignmentsComponent } from './pages/newassignments/newassignments.c
     EtudiantComponent,
     NavbarComponent,
     SidebarComponent,
-    NewassignmentsComponent
+    NewassignmentsComponent,
+    EtudiantDetailsComponent,
+    MatiereDetailsComponent
   ],
   imports: [
     BrowserModule,

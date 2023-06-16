@@ -9,6 +9,8 @@ import {LoginComponent} from "./login/login.component";
 import { EtudiantComponent } from "./pages/etudiant/etudiant.component";
 import { MatiereComponent } from "./pages/matiere/matiere.component";
 import { NewassignmentsComponent } from "./pages/newassignments/newassignments.component";
+import {EtudiantDetailsComponent} from "./pages/etudiant/etudiant-details/etudiant-details.component";
+import {MatiereDetailsComponent} from "./pages/matiere/matiere-details/matiere-details.component";
 
 const routes: Routes = [
   {
@@ -41,8 +43,16 @@ const routes: Routes = [
     component: EtudiantComponent
   },
   {
+    path: 'etudiant/:id',
+    component: EtudiantDetailsComponent
+  },
+  {
     path: 'matiere',
     component: MatiereComponent
+  },
+  {
+    path: 'matiere/:id',
+    component: MatiereDetailsComponent
   }
 ]
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AssignmentsService } from 'src/app/shared/assignments.service';
+import { AssignmentsService } from 'src/app/shared/services/assignments.service';
 import { Assignment } from '../assignements/assignment.model';
 
 @Component({
@@ -20,7 +20,7 @@ export class NewassignmentsComponent implements OnInit {
     // TODO
     this.getDevoir();
   }
-  
+
   constructor(private assignementService:AssignmentsService) {
   }
   getDevoir(){

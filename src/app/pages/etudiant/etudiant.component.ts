@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {AssignmentsService} from "../../shared/assignments.service";
-import {EtudiantsService} from "../../shared/etudiants.service";
+import {AssignmentsService} from "../../shared/services/assignments.service";
+import {EtudiantsService} from "../../shared/services/etudiants.service";
 import {Assignment} from "../assignements/assignment.model";
 import {Etudiant} from "./etudiant.model";
 
@@ -37,7 +37,7 @@ export class EtudiantComponent implements OnInit {
       this.page = data.page;
       this.limit = data.limit;
       this.totalPages = data.totalDocs;
-      
+
     })
   }
 
