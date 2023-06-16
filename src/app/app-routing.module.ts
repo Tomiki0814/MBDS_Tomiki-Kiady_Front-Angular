@@ -24,13 +24,14 @@ const routes: Routes = [
     component: NewassignmentsComponent
   },
   {
-    path: 'assignments/:id',
-    component: NewassignementDetailsComponent
-  },
-  {
     path: 'assignments/add',
     component: AddNewassignmentComponent
   },
+  {
+    path: 'assignments/:id',
+    component: NewassignementDetailsComponent
+  },
+
   {
     path: 'add',
     component: AddAssignmentComponent
