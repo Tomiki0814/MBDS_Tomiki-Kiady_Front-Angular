@@ -32,4 +32,9 @@ export class NewassignementDetailsComponent implements OnInit{
     })
   }
 
+  deleteDevoir() {
+    this.apiservice.DeleteEntity(this.url, this.id).subscribe( data =>{
+
+    })
+  }
 }
