@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {EtudiantsService} from "../../shared/etudiants.service";
+import {EtudiantsService} from "../../shared/services/etudiants.service";
 import {Etudiant} from "../etudiant/etudiant.model";
 import {Matiere} from "./matiere.model";
-import {MatiereService} from "../../shared/matiere.service";
+import {MatiereService} from "../../shared/services/matiere.service";
 
 @Component({
   selector: 'app-matiere',

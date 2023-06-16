@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from './shared/auth.service';
+import { AuthService } from './shared/services/auth.service';
 import { NavigationEnd, Router } from '@angular/router';
-import { AssignmentsService } from './shared/assignments.service';
+import { AssignmentsService } from './shared/services/assignments.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent {
   nom:string = "";
   currentRoute:string = "";
 
-  constructor(private authService:AuthService, 
+  constructor(private authService:AuthService,
               private router:Router,
               private assigmmentsService:AssignmentsService) {
     console.log(router.url);
@@ -25,8 +25,8 @@ export class AppComponent {
         this.currentRoute = event.url;
       }
     });
-    
-    
+
+
   }
 
   login() {
