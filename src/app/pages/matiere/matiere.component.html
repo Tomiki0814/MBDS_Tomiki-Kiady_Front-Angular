@@ -1,17 +1,22 @@
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">matiere</th>
-    <th scope="col">image</th>
-    <th scope="col">prof</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let etudiant of matieres ">
-    <td><a routerLink="{{etudiant._id}}">{{etudiant.nom}}</a></td>
-    <td><img src="assets/img/bg-01.jpg" width="100px"></td>
-    <td><img src="assets/img/bg-01.jpg" width="100px">{{etudiant.prof}}</td>
-  </tr>
+<mat-card>
+  <mat-card-title>Matière</mat-card-title>
+  <mat-card-content>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">matiere</th>
+          <th scope="col">image</th>
+          <th scope="col">prof</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let etudiant of matieres ">
+          <td><a routerLink="{{etudiant._id}}">{{etudiant.nom}}</a></td>
+          <td><img src="assets/img/bg-01.jpg" width="100px"></td>
+          <td><img src="assets/img/bg-01.jpg" width="100px">{{etudiant.prof}}</td>
+        </tr>
 
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
