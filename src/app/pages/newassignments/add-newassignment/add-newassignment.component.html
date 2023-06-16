@@ -1,15 +1,16 @@
 <form>
   <div class="form-group">
     <label for="matiere">Matiere</label>
-    <select class="form-control" id="matiere">
-      <option>1</option>
+
+    <select name="matiere" class="form-control" id="matiere" [(ngModel)]="devoir.idMatiere">
+      <option *ngFor="let item of matieres" value="{{item._id}}">{{item.nom}}</option>
     </select>
   </div>
   <div class="form-group">
     <label for="etudiant">Etudiant</label>
-    <select class="form-control" id="etudiant">
-      <option>1</option>
+    <select name="etudiant" class="form-control" id="etudiant" [(ngModel)]="devoir.idEtudiant">
+      <option *ngFor="let item of etudiants" value="{{item._id}}">{{item.nom}}</option>
     </select>
   </div>
-  <button class="btn btn-primary">Ajouter</button>
+  <button class="btn btn-primary" (click)="ajouter()">Ajouter</button>
 </form>

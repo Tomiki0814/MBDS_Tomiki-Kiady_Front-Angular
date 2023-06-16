@@ -20,7 +20,7 @@ export class ApiService {
 
 
   addEntity(url:string, entity: any){
-
+    return this.http.post(this.domaine+url, entity);
   }
 
   updateEntity(url:string, entity: any){
