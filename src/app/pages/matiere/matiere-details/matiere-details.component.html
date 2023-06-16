@@ -1,1 +1,16 @@
-<p>matiere-details works!</p>
+<h4>Details des notes de l'eleve: </h4>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Eleve</th>
+    <th scope="col">Note</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of listeDevoirs ">
+    <td>{{item.idEtudiant.nom}}</td>
+    <td>{{item.note}}</td>
+  </tr>
+
+  </tbody>
+</table>

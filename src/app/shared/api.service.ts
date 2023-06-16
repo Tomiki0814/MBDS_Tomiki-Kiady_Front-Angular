@@ -13,7 +13,7 @@ export class ApiService {
     return this.http.get<Etudiant[]>(url+ "?page=" + page + "&limit=" + limit);
   }
   getEntityDetails(url:string,id:string){
-    return this.http.get<Etudiant[]>(url+ id);
+    return this.http.get<any[]>(url+ id);
   }
 
 
