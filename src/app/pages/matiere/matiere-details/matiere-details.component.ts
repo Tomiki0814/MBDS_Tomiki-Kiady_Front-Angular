@@ -8,8 +8,8 @@ import {ApiService} from "../../../shared/services/api.service";
 })
 export class MatiereDetailsComponent implements OnInit{
 
-  url="http://localhost:8010/api/findbyMatiere/648044cfe9d1a2c72fffeac0";
-  id=""
+  url="findbyMatiere/";
+  id="648044cfe9d1a2c72fffeac0"
   listeDevoirs:any[] =[];
   constructor(private apiservice: ApiService) {
 
