@@ -6,20 +6,30 @@ import {AssignmentDetailComponent} from "./pages/assignements/assignment-detail/
 import {EditAssignmentComponent} from "./pages/assignements/edit-assignment/edit-assignment.component";
 import {authGuard} from "./shared/auth.guard";
 import {LoginComponent} from "./login/login.component";
-import { EtudiantComponent } from "./pages/etudiant/etudiant.component";
-import { MatiereComponent } from "./pages/matiere/matiere.component";
-import { NewassignmentsComponent } from "./pages/newassignments/newassignments.component";
+import {EtudiantComponent} from "./pages/etudiant/etudiant.component";
+import {MatiereComponent} from "./pages/matiere/matiere.component";
+import {NewassignmentsComponent} from "./pages/newassignments/newassignments.component";
+import {AddNewassignmentComponent} from "./pages/newassignments/add-newassignment/add-newassignment.component";
+import {
+  NewassignementDetailsComponent
+} from "./pages/newassignments/newassignement-details/newassignement-details.component";
 import {EtudiantDetailsComponent} from "./pages/etudiant/etudiant-details/etudiant-details.component";
 import {MatiereDetailsComponent} from "./pages/matiere/matiere-details/matiere-details.component";
 
 const routes: Routes = [
+
+  {path: '', redirectTo: '/assignments', pathMatch: 'full'},
   {
-    path: '',
+    path: 'assignments',
     component: NewassignmentsComponent
   },
   {
-    path: 'home',
-    component: AssignmentsComponent
+    path: 'assignments/:id',
+    component: NewassignementDetailsComponent
+  },
+  {
+    path: 'assignments/add',
+    component: AddNewassignmentComponent
   },
   {
     path: 'add',
@@ -60,4 +70,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

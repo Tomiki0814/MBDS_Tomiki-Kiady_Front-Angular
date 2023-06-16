@@ -1,3 +1,6 @@
+<button class="btn btn-primary">
+  <a routerLink="add" class="text-white">AJouter</a>
+</button>
 <table class="table">
     <thead>
       <tr>
@@ -10,10 +13,10 @@
     <tbody>
       <tr *ngFor="let item of data">
         <th scope="row">1</th>
-        <td>{{item.idEtudiant.nom}}</td>
+        <td><a routerLink="{{item._id}}">{{item.idEtudiant.nom}}</a></td>
         <td>{{item.idMatiere.nom}}</td>
         <td>{{item.note}}</td>
       </tr>
-      
+
     </tbody>
   </table>
