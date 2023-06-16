@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AssignmentsService } from 'src/app/shared/services/assignments.service';
 import { Assignment } from '../assignements/assignment.model';
+import {ApiService} from "../../shared/services/api.service";
 
 @Component({
   selector: 'app-newassignments',
@@ -9,22 +10,19 @@ import { Assignment } from '../assignements/assignment.model';
 })
 export class NewassignmentsComponent implements OnInit {
 
+  url="devoirs"
   page = 1;
   limit = 10;
-  data :Assignment[] = [];
+  data :any[] = [];
   ngOnInit(): void {
-    console.log("OnInit Composant instancié et juste avant le rendu HTML (le composant est visible dans la page HTML)");
-    // exercice : regarder si il existe des query params
-    // page et limit, récupérer leur valeurs si elles existent
-    // et les passer à la méthode getAssignments
-    // TODO
     this.getDevoir();
   }
 
-  constructor(private assignementService:AssignmentsService) {
+  constructor(private apiservice: ApiService) {
   }
   getDevoir(){
-    this.assignementService.getAssignments(this.page,this.limit).subscribe(data => {
+    let newurl = this.url + "?page=" + this.page + "&limit=" + this.limit;
+    this.apiservice.getEntity(newurl).subscribe(data => {
       this.data = data;
       console.log(data);
     })
