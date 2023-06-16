@@ -7,13 +7,15 @@ import {Etudiant} from "../../pages/etudiant/etudiant.model";
 })
 export class ApiService {
 
+  //domaine=""; prod
+  domaine ="http://localhost:8010/api/";//locale
   constructor(private http:HttpClient) { }
 
-  getEntity(url:string, page:number, limit:number){
-    return this.http.get<Etudiant[]>(url+ "?page=" + page + "&limit=" + limit);
+  getEntity(url:string){
+    return this.http.get<any>(this.domaine+url);
   }
   getEntityDetails(url:string,id:string){
-    return this.http.get<any[]>(url+ id);
+    return this.http.get<any[]>(this.domaine+url+ id);
   }
 
 

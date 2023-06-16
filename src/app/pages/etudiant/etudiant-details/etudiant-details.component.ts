@@ -8,8 +8,8 @@ import {ApiService} from "../../../shared/services/api.service";
 })
 export class EtudiantDetailsComponent implements OnInit {
 
-  url="http://localhost:8010/api/findByEtudiant/648041e5e9d1a2c72ffae682";
-  id ="";
+  url="findByEtudiant/";
+  id ="648041e5e9d1a2c72ffae682";
   listeDevoirs:any[] = [];
 
   constructor(private apiservice: ApiService) {
@@ -27,7 +27,6 @@ export class EtudiantDetailsComponent implements OnInit {
   getDevoirEtudiant(){
     this.apiservice.getEntityDetails(this.url,this.id).subscribe(data=> {
         this.listeDevoirs = data;
-        console.log(data)
     })
   }
 

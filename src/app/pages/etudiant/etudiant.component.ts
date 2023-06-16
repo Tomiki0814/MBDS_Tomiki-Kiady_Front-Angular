@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {AssignmentsService} from "../../shared/services/assignments.service";
-import {EtudiantsService} from "../../shared/services/etudiants.service";
-import {Assignment} from "../assignements/assignment.model";
 import {Etudiant} from "./etudiant.model";
+import {ApiService} from "../../shared/services/api.service";
 
 @Component({
   selector: 'app-etudiant',
@@ -11,6 +9,7 @@ import {Etudiant} from "./etudiant.model";
 })
 export class EtudiantComponent implements OnInit {
 
+  url="etudiants";
   etudiants:Etudiant[] = [];
   displayedColumns: string[] = [ 'nom','prenom','email','sexe' ];
 
@@ -18,21 +17,19 @@ export class EtudiantComponent implements OnInit {
    page: number=0;
    limit: number=10;
    totalPages: number = 0;
-  constructor(private EtudiantService:EtudiantsService) {
+  constructor(private apiservice: ApiService) {
   }
 
   ngOnInit(): void {
-    console.log("OnInit Composant instancié et juste avant le rendu HTML (le composant est visible dans la page HTML)");
-    // exercice : regarder si il existe des query params
-    // page et limit, récupérer leur valeurs si elles existent
-    // et les passer à la méthode getAssignments
-    // TODO
 
     this.getEtudiants();
   }
 
   getEtudiants(){
-    this.EtudiantService.getEtudiant(this.page, this.limit).subscribe(data => {
+
+    let newurl = this.url + "?page=" + this.page + "&limit=" + this.limit;
+    console.log(newurl)
+    this.apiservice.getEntity(newurl).subscribe(data => {
       this.etudiants = data.docs;
       this.page = data.page;
       this.limit = data.limit;
@@ -43,12 +40,8 @@ export class EtudiantComponent implements OnInit {
 
   // Pour mat-paginator
   handlePage(event: any) {
-    console.log(event);
-
     this.page = event.pageIndex;
     this.limit = event.pageSize;
-    console.log("numPage="+this.page)
-    console.log("limitPage="+this.limit)
     this.getEtudiants();
   }
 
