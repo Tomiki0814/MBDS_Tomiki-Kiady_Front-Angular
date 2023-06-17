@@ -1,18 +1,20 @@
 <div class="title-component">
   <h4>Note {{matiere}} </h4>
 </div>
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">Eleve</th>
-    <th scope="col">Note</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let item of listeDevoirs ">
-    <td>{{item.idEtudiant.nom}}</td>
-    <td>{{item.note}}</td>
-  </tr>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Eleve</th>
+        <th scope="col">Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listeDevoirs ">
+        <td>{{item.idEtudiant.nom}}</td>
+        <td>{{item.note}}</td>
+      </tr>
 
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
