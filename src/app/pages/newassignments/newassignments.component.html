@@ -21,7 +21,7 @@
         <td scope="row">1</td>
         <td><a routerLink="{{item._id}}">{{item.idEtudiant.nom}}</a></td>
         <td>{{item.idMatiere.nom}}</td>
-        <td>{{item.note}}</td>
+        <td [ngClass]="item.note < 10 ? 'red-text ' : 'blue-text '">{{item.note}}</td>
       </tr>
 
     </tbody>

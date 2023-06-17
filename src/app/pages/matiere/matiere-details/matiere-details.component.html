@@ -12,7 +12,7 @@
     <tbody>
       <tr *ngFor="let item of listeDevoirs ">
         <td>{{item.idEtudiant.nom}}</td>
-        <td>{{item.note}}</td>
+        <td [ngClass]="item.note < 10 ? 'red-text ' : 'blue-text '">{{item.note}}</td>
       </tr>
 
     </tbody>
