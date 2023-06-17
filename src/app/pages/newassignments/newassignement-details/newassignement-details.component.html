@@ -1,3 +1,6 @@
+<button class="btn btn-primary">
+  <a routerLink="/assignments" class="text-white">Retour vers liste</a>
+</button>
 <table class="table table-bordered">
   <tbody>
   <tr>
@@ -30,6 +33,7 @@
   </tr>
   </tbody>
 </table>
-
-<button class="btn btn-warning"><a routerLink="/assignments/edit/{{devoir._id}}">Modifier</a> </button>
-<button class="btn btn-danger" (click)="deleteDevoir()">Supprimer</button>
+<div *ngIf="isAdmin">
+  <button class="btn btn-warning"><a routerLink="/assignments/edit/{{devoir._id}}">Modifier</a> </button>
+  <button class="btn btn-danger" (click)="deleteDevoir()">Supprimer</button>
+</div>

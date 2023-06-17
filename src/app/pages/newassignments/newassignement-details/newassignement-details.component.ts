@@ -4,6 +4,7 @@ import {Devoir} from "../../../shared/models/Devoir.model";
 import {Matiere} from "../../../shared/models/Matiere.modele";
 import {Etudiant} from "../../../shared/models/Etudiant.model";
 import {ActivatedRoute} from "@angular/router";
+import {AuthService} from "../../../shared/services/auth.service";
 
 
 @Component({
@@ -16,9 +17,11 @@ export class NewassignementDetailsComponent implements OnInit{
   url="devoirs/";
   id=""
   devoir = new Devoir("","", new Etudiant(),new Matiere());
-  constructor(private route: ActivatedRoute,private apiservice: ApiService) {
+  isAdmin=false;
+  constructor(private route: ActivatedRoute,private apiservice: ApiService, private guard:AuthService) {
   }
   ngOnInit(): void {
+    this.isAdmin = this.guard.loggedIn;
     this.id = this.route.snapshot.params['id'];
     this.getData()
 

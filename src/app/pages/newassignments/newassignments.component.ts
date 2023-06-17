@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AssignmentsService } from 'src/app/shared/services/assignments.service';
 import { Assignment } from '../assignements/assignment.model';
 import {ApiService} from "../../shared/services/api.service";
+import {authGuard} from "../../shared/auth.guard";
+import {AuthService} from "../../shared/services/auth.service";
 
 @Component({
   selector: 'app-newassignments',
@@ -14,11 +16,13 @@ export class NewassignmentsComponent implements OnInit {
   page = 1;
   limit = 10;
   data :any[] = [];
+  isAdmin=false;
   ngOnInit(): void {
+    this.isAdmin = this.guard.loggedIn
     this.getDevoir();
   }
 
-  constructor(private apiservice: ApiService) {
+  constructor(private apiservice: ApiService,private guard:AuthService) {
   }
   getDevoir(){
     let newurl = this.url + "?page=" + this.page + "&limit=" + this.limit;
@@ -27,4 +31,7 @@ export class NewassignmentsComponent implements OnInit {
       console.log(data);
     })
   }
+
+  protected readonly authGuard = authGuard;
+  protected readonly AuthService = AuthService;
 }

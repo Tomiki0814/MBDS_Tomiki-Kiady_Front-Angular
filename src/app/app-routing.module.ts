@@ -26,11 +26,13 @@ const routes: Routes = [
   },
   {
     path: 'assignments/add',
-    component: AddNewassignmentComponent
+    component: AddNewassignmentComponent,
+    canActivate: [authGuard]
   },
   {
     path: 'assignments/edit/:id',
-    component: EditNewassignmentComponent
+    component: EditNewassignmentComponent,
+    canActivate: [authGuard]
   },
   {
     path: 'assignments/:id',
