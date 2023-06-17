@@ -16,64 +16,27 @@ import {
 import {EtudiantDetailsComponent} from "./pages/etudiant/etudiant-details/etudiant-details.component";
 import {MatiereDetailsComponent} from "./pages/matiere/matiere-details/matiere-details.component";
 import {EditNewassignmentComponent} from "./pages/newassignments/edit-newassignment/edit-newassignment.component";
+import {LayoutsComponent} from "./layouts/layouts.component";
 
 const routes: Routes = [
 
-  {path: '', redirectTo: '/assignments', pathMatch: 'full'},
+  {path: '', redirectTo: 'app', pathMatch: 'full'},
   {
-    path: 'assignments',
-    component: NewassignmentsComponent
-  },
-  {
-    path: 'assignments/add',
-    component: AddNewassignmentComponent,
-    canActivate: [authGuard]
-  },
-  {
-    path: 'assignments/edit/:id',
-    component: EditNewassignmentComponent,
-    canActivate: [authGuard]
-  },
-  {
-    path: 'assignments/:id',
-    component: NewassignementDetailsComponent
-  },
-
-
-  {
-    path: 'add',
-    component: AddAssignmentComponent
-  },
-  {
-    path: 'assignments/:id',
-    component: AssignmentDetailComponent
-  },
-  {
-    path: 'assignments/:id/edit',
-    component: EditAssignmentComponent,
-    canActivate: [authGuard]
+    path: "app",
+    component: LayoutsComponent,
+    children: [
+      {
+        path: "",
+        loadChildren: () => import ("./layouts/layouts.module").then(m => m.LayoutsModule)
+      }
+    ]
   },
 
   {
     path: 'login',
     component: LoginComponent
   },
-  {
-    path: 'etudiant',
-    component: EtudiantComponent
-  },
-  {
-    path: 'etudiant/:id',
-    component: EtudiantDetailsComponent
-  },
-  {
-    path: 'matiere',
-    component: MatiereComponent
-  },
-  {
-    path: 'matiere/:id',
-    component: MatiereDetailsComponent
-  }
+
 ]
 
 @NgModule({

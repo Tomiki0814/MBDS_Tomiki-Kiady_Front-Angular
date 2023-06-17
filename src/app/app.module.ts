@@ -39,6 +39,7 @@ import { MatiereDetailsComponent } from './pages/matiere/matiere-details/matiere
 import { AddNewassignmentComponent } from './pages/newassignments/add-newassignment/add-newassignment.component';
 import { NewassignementDetailsComponent } from './pages/newassignments/newassignement-details/newassignement-details.component';
 import { EditNewassignmentComponent } from './pages/newassignments/edit-newassignment/edit-newassignment.component';
+import { LayoutsComponent } from './layouts/layouts.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { EditNewassignmentComponent } from './pages/newassignments/edit-newassig
     MatiereDetailsComponent,
     AddNewassignmentComponent,
     NewassignementDetailsComponent,
-    EditNewassignmentComponent
+    EditNewassignmentComponent,
+    LayoutsComponent
   ],
   imports: [
     BrowserModule,
