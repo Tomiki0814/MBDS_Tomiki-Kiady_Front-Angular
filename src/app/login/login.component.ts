@@ -12,15 +12,22 @@ export class LoginComponent {
 
   url="login"
   user={username:"",mdp:""}
+  errorMessage="";
   constructor(private apiservice: ApiService, private router: Router, private guard:AuthService) {
   }
 
   Login(){
-    console.log(this.user);
-    this.guard.logIn();
-    this.router.navigate(['']);
-    /*this.apiservice.addEntity(this.url,this.user).subscribe(data =>{
 
-    })*/
+    this.apiservice.addEntity(this.url,this.user).subscribe(data =>{
+        if(data==null){
+          this.errorMessage = "Login Incorrect"
+        }else{
+          let user = <any>data
+          localStorage.setItem("username",user.nom)
+          localStorage.setItem("profil",user.profil)
+          this.router.navigate(['']);
+        }
+
+    })
   }
 }

@@ -19,10 +19,11 @@
                     </button>
 
                 </div>
-                <div class="container-login100-form-btn">
 
+                  <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+                    <p class="text text-danger">{{errorMessage}}</p>
+                  </div>
 
-                </div>
 
             </form>
         </div>

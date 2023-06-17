@@ -21,7 +21,7 @@ export class NewassignementDetailsComponent implements OnInit{
   constructor(private route: ActivatedRoute,private apiservice: ApiService, private guard:AuthService) {
   }
   ngOnInit(): void {
-    this.isAdmin = this.guard.loggedIn;
+    this.isAdmin = this.guard.isAdmin();
     this.id = this.route.snapshot.params['id'];
     this.getData()
 

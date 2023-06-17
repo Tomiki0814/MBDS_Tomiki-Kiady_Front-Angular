@@ -29,8 +29,8 @@ export class AppComponent {
 
   login() {
     // utilise l'authService pour se connecter
-    if(!this.authService.loggedIn) {
-      this.authService.logIn();
+    if(!this.authService.isLogged()) {
+      //this.authService.logIn();
       // on change le label du bouton
       this.labelConnexion = "Se déconnecter";
     } else {
@@ -41,10 +41,10 @@ export class AppComponent {
   }
 
   isLogged() {
-    if(this.authService.loggedIn) {
+    if(this.authService.isLogged()) {
       this.nom = "Michel Buffa";
     }
-    return this.authService.loggedIn;
+    return this.authService.isLogged();
   }
 
   creerDonneesDeTest() {

@@ -18,7 +18,7 @@ export class NewassignmentsComponent implements OnInit {
   data :any[] = [];
   isAdmin=false;
   ngOnInit(): void {
-    this.isAdmin = this.guard.loggedIn
+    this.isAdmin = this.guard.isAdmin()
     this.getDevoir();
   }
 
@@ -28,7 +28,6 @@ export class NewassignmentsComponent implements OnInit {
     let newurl = this.url + "?page=" + this.page + "&limit=" + this.limit;
     this.apiservice.getEntity(newurl).subscribe(data => {
       this.data = data;
-      console.log(data);
     })
   }
 
