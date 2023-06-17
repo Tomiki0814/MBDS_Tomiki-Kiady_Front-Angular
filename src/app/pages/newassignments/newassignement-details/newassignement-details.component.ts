@@ -3,7 +3,7 @@ import {ApiService} from "../../../shared/services/api.service";
 import {Devoir} from "../../../shared/models/Devoir.model";
 import {Matiere} from "../../../shared/models/Matiere.modele";
 import {Etudiant} from "../../../shared/models/Etudiant.model";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../../shared/services/auth.service";
 
 
@@ -18,7 +18,7 @@ export class NewassignementDetailsComponent implements OnInit{
   id=""
   devoir = new Devoir("","", new Etudiant(),new Matiere());
   isAdmin=false;
-  constructor(private route: ActivatedRoute,private apiservice: ApiService, private guard:AuthService) {
+  constructor(private route: ActivatedRoute,private apiservice: ApiService, private guard:AuthService,private router: Router) {
   }
   ngOnInit(): void {
     this.isAdmin = this.guard.isAdmin();
@@ -37,7 +37,7 @@ export class NewassignementDetailsComponent implements OnInit{
 
   deleteDevoir() {
     this.apiservice.DeleteEntity(this.url, this.id).subscribe( data =>{
-
+      this.router.navigate(['']);
     })
   }
 }

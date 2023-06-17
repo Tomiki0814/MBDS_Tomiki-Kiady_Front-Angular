@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api.service";
 import { FormsModule } from '@angular/forms';
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -15,7 +16,7 @@ export class AddNewassignmentComponent implements OnInit{
   etudiants: any[] = [];
   devoir = {idEtudiant:"",idMatiere:""}
   url="devoirs";
-  constructor(private apiservice: ApiService) {
+  constructor(private apiservice: ApiService, private router: Router) {
   }
   ngOnInit(): void {
     this.getListeEtudiant();
@@ -35,8 +36,8 @@ export class AddNewassignmentComponent implements OnInit{
 
   ajouter(){
     this.apiservice.addEntity(this.url, this.devoir).subscribe( data =>{
-
+      this.router.navigate(['']);
     })
-    console.log(this.devoir)
+
   }
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Devoir} from "../../../shared/models/Devoir.model";
 import {Etudiant} from "../../../shared/models/Etudiant.model";
 import {Matiere} from "../../../shared/models/Matiere.modele";
@@ -27,7 +27,7 @@ export class EditNewassignmentComponent implements OnInit{
     this.getDevoir();
   }
 
-  constructor(private route: ActivatedRoute,private apiservice: ApiService) {
+  constructor(private route: ActivatedRoute,private apiservice: ApiService, private router: Router) {
   }
   getListeEtudiant(){
     this.apiservice.getEntity(this.urlEtudiant).subscribe(data => {
@@ -50,7 +50,7 @@ export class EditNewassignmentComponent implements OnInit{
 
   editDevoir(){
     this.apiservice.updateEntity(this.urlDevoir,this.id,this.devoir).subscribe( data =>{
-
+      this.router.navigate(['app/assignments/'+this.id]);
     })
   }
 
