@@ -13,7 +13,7 @@
     <tbody>
       <tr *ngFor="let etudiant of matieres ">
         <td><a routerLink="{{etudiant._id}}">{{etudiant.nom}}</a></td>
-        <td><img src="assets/img/bg-01.jpg" width="100px"></td>
+        <td><img src="{{etudiant.image}}" width="100px"></td>
         <td><img src="assets/img/bg-01.jpg" width="100px">{{etudiant.prof}}</td>
       </tr>
 
