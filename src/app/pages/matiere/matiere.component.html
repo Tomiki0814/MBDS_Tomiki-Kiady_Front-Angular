@@ -2,7 +2,7 @@
   <h3>Matière </h3>
 </div>
 <div class="table-responsive">
-  <table class="table">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">matiere</th>
@@ -13,8 +13,8 @@
     <tbody>
       <tr *ngFor="let etudiant of matieres ">
         <td><a routerLink="{{etudiant._id}}">{{etudiant.nom}}</a></td>
-        <td><img src="{{etudiant.image}}" width="100px"></td>
-        <td><img src="assets/img/bg-01.jpg" width="100px">{{etudiant.prof}}</td>
+        <td><img src="{{etudiant.image}}" width="85px"></td>
+        <td><img src="assets/img/profil.png" width="60px" style="clip-path: ellipse(30% 50%);">{{etudiant.prof}}</td>
       </tr>
 
     </tbody>
