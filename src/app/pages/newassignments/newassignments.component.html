@@ -16,6 +16,7 @@
         <th scope="col">Nom Etudiant</th>
         <th scope="col">Matiere</th>
         <th scope="col">Date de rendu</th>
+        <th scope="col">Note</th>
         <th></th>
       </tr>
     </thead>
@@ -23,10 +24,10 @@
       <tr *ngFor="let item of data">
         <td><a routerLink="{{item._id}}">{{item.idEtudiant.nom}}</a></td>
         <td>{{item.idMatiere.nom}}</td>
+        <td>{{item.dateRendu | date:'dd/MM/yyyy'}}</td>
         <td [ngClass]="item.note < 10 ? 'red-text ' : 'blue-text '">{{item.note}}</td>
-        <td><button class="btn btn-success">Rendre</button></td>
+        <td><button class="btn btn-success" *ngIf="!item.estRendu">Rendre</button></td>
       </tr>
-
     </tbody>
   </table>
 </div>

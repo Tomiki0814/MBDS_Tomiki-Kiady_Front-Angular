@@ -35,7 +35,6 @@ export class NewassignmentsComponent implements OnInit {
       this.data = data.docs;
       this.totalItem = data.totals;
       this.totalPages = this.totalItem % this.limit == 0 ? (this.totalItem / this.limit) : Math.floor(this.totalItem / this.limit) +1;
-
     })
   }
 

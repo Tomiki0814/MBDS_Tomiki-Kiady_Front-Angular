@@ -6,6 +6,10 @@ export class Devoir {
   nom: string
   idEtudiant: Etudiant
   idMatiere: Matiere
+  dateRendu: Date
+  note: number
+  remarque:string
+  estRendu:boolean
 
 
   constructor(id: string, nom: string, idEtudiant: Etudiant, idMatiere: Matiere) {

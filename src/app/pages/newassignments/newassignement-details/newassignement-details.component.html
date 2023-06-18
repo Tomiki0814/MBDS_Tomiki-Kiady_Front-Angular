@@ -1,5 +1,5 @@
 <button class="btn btn-primary">
-  <a routerLink="/assignments" class="text-white">Retour vers liste</a>
+  <a routerLink="" class="text-white">Retour vers liste</a>
 </button>
 <table class="table table-bordered">
   <tbody>
@@ -13,15 +13,15 @@
   </tr>
   <tr>
     <th class="table-primary" scope="row">Date Rendu</th>
-    <td class="table-primary">$</td>
+    <td class="table-primary">{{devoir.dateRendu | date:'dd/MM/yyyy'}}</td>
   </tr>
   <tr>
     <th class="table-primary" scope="row">Note</th>
-    <td class="table-primary" colspan="2">{{devoir}}</td>
+    <td class="table-primary" colspan="2">{{devoir.note}}</td>
   </tr>
   <tr>
     <th class="table-primary" scope="row">Remarque</th>
-    <td class="table-primary" colspan="2">{{devoir}}</td>
+    <td class="table-primary" colspan="2">{{devoir.remarque}}</td>
   </tr>
   <tr>
     <th class="table-primary" scope="row">Prof</th>
@@ -29,7 +29,7 @@
   </tr>
   <tr>
     <th class="table-primary" scope="row">Statut</th>
-    <td class="table-primary" colspan="2">Rendu ou Pas</td>
+    <td class="table-primary" colspan="2">{{devoir.estRendu? "Déjà rendu": "Pas encore rendu"}}</td>
   </tr>
   </tbody>
 </table>
