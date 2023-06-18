@@ -14,5 +14,12 @@
       <option *ngFor="let item of etudiants" value="{{item._id}}">{{item.nom}}</option>
     </select>
   </div>
+    <mat-form-field appearance="fill">
+    <mat-label>Date de rendu</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="devoir.dateRendu" name="date" required>
+    <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
   <button class="btn btn-primary" (click)="editDevoir()">Modifier</button>
 </form>
