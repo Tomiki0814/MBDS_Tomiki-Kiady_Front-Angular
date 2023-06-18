@@ -48,11 +48,11 @@ export class NewassignmentsComponent implements OnInit {
   }
 
 
-  openModal() {
+  openModal(id:any) {
 
     this.modalRef = this.modalService.show(ModalRendreAssignementComponent,  {
       initialState: {
-        title: 'Modal title',
+        idDevoir: id,
       }
     });
 
