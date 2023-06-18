@@ -7,9 +7,9 @@
 <div class="modal-body">
   <form>
     <label>Note</label>
-    <input  name="nom" class="form-control">
+    <input [(ngModel)]="devoir.note"  name="note" class="form-control">
     <label>Remarque</label>
-    <input name="adresse" class="form-control">
+    <input [(ngModel)]="devoir.remarque"  name="remarque" class="form-control">
     <button class="btn btn-primary" (click)="rendreDevoir()">Valider</button>
   </form>
 </div>
