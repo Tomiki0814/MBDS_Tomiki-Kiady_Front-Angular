@@ -40,6 +40,8 @@ import { AddNewassignmentComponent } from './pages/newassignments/add-newassignm
 import { NewassignementDetailsComponent } from './pages/newassignments/newassignement-details/newassignement-details.component';
 import { EditNewassignmentComponent } from './pages/newassignments/edit-newassignment/edit-newassignment.component';
 import { LayoutsComponent } from './layouts/layouts.component';
+import {ModalModule} from "ngx-bootstrap/modal";
+import { ModalRendreAssignementComponent } from './pages/newassignments/modal-rendre-assignement/modal-rendre-assignement.component';
 
 
 @NgModule({
@@ -61,7 +63,8 @@ import { LayoutsComponent } from './layouts/layouts.component';
     AddNewassignmentComponent,
     NewassignementDetailsComponent,
     EditNewassignmentComponent,
-    LayoutsComponent
+    LayoutsComponent,
+    ModalRendreAssignementComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +76,7 @@ import { LayoutsComponent } from './layouts/layouts.component';
     MatInputModule, MatFormFieldModule, MatDatepickerModule,
     MatListModule, MatCardModule, MatCheckboxModule, MatSlideToggleModule,
     MatTableModule, MatPaginatorModule,
+    ModalModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],

@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import {AssignmentsService} from 'src/app/shared/services/assignments.service';
 import {Assignment} from '../assignements/assignment.model';
 import {ApiService} from "../../shared/services/api.service";
 import {authGuard} from "../../shared/auth.guard";
 import {AuthService} from "../../shared/services/auth.service";
+import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
+import {ModalRendreAssignementComponent} from "./modal-rendre-assignement/modal-rendre-assignement.component";
 
 @Component({
   selector: 'app-newassignments',
@@ -20,13 +22,13 @@ export class NewassignmentsComponent implements OnInit {
   totalItem:number = 0
   data: any[] = [];
   isAdmin = false;
-
+  modalRef: BsModalRef;
   ngOnInit(): void {
     this.isAdmin = this.guard.isAdmin()
     this.getDevoir();
   }
 
-  constructor(private apiservice: ApiService, private guard: AuthService) {
+  constructor(private apiservice: ApiService, private guard: AuthService, private modalService: BsModalService) {
   }
 
   getDevoir() {
@@ -46,4 +48,13 @@ export class NewassignmentsComponent implements OnInit {
   }
 
 
+  openModal() {
+
+    this.modalRef = this.modalService.show(ModalRendreAssignementComponent,  {
+      initialState: {
+        title: 'Modal title',
+      }
+    });
+
+  }
 }

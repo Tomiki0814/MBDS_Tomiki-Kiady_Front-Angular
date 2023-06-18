@@ -26,7 +26,7 @@
         <td>{{item.idMatiere.nom}}</td>
         <td>{{item.dateRendu | date:'dd/MM/yyyy'}}</td>
         <td [ngClass]="item.note < 10 ? 'red-text ' : 'blue-text '">{{item.note}}</td>
-        <td><button class="btn btn-success" *ngIf="!item.estRendu">Rendre</button></td>
+        <td><button class="btn btn-success" *ngIf="!item.estRendu" (click)="openModal()">Rendre</button></td>
       </tr>
     </tbody>
   </table>
