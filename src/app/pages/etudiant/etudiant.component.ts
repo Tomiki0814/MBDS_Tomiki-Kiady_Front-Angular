@@ -14,7 +14,7 @@ export class EtudiantComponent implements OnInit {
   displayedColumns: string[] = [ 'nom','prenom','email','sexe' ];
 
    // propriétés pour la pagination
-   page: number=0;
+   page: number=1;
    limit: number=10;
    totalPages: number = 0;
   constructor(private apiservice: ApiService) {
@@ -28,7 +28,6 @@ export class EtudiantComponent implements OnInit {
   getEtudiants(){
 
     let newurl = this.url + "?page=" + this.page + "&limit=" + this.limit;
-    console.log(newurl)
     this.apiservice.getEntity(newurl).subscribe(data => {
       this.etudiants = data.docs;
       this.page = data.page;
@@ -40,7 +39,7 @@ export class EtudiantComponent implements OnInit {
 
   // Pour mat-paginator
   handlePage(event: any) {
-    this.page = event.pageIndex;
+    this.page = event.pageIndex+1;
     this.limit = event.pageSize;
     this.getEtudiants();
   }
