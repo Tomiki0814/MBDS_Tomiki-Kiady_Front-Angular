@@ -13,8 +13,11 @@ import {AuthService} from "../../shared/services/auth.service";
 export class NewassignmentsComponent implements OnInit {
 
   url = "devoirs"
-  page = 1;
-  limit = 10;
+  // propriétés pour la pagination
+  page: number=1;
+  limit: number=10;
+  totalPages: number = 0;
+  totalItem:number = 0
   data: any[] = [];
   isAdmin = false;
 
@@ -29,8 +32,19 @@ export class NewassignmentsComponent implements OnInit {
   getDevoir() {
     let newurl = this.url + "?page=" + this.page + "&limit=" + this.limit;
     this.apiservice.getEntity(newurl).subscribe(data => {
-      this.data = data;
+      this.data = data.docs;
+      this.totalItem = data.totals;
+      this.totalPages = this.totalItem % this.limit == 0 ? (this.totalItem / this.limit) : Math.floor(this.totalItem / this.limit) +1;
+
     })
   }
+
+  // Pour mat-paginator
+  handlePage(event: any) {
+    this.page = event.pageIndex+1;
+    this.limit = event.pageSize;
+    this.getDevoir();
+  }
+
 
 }
