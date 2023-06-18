@@ -14,7 +14,7 @@
   </div>
   <mat-form-field appearance="fill">
     <mat-label>Date de rendu</mat-label>
-    <input matInput [matDatepicker]="picker" [(ngModel)]="dateRendu" name="date" required>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="devoir.dateRendu" name="date" required>
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
