@@ -15,7 +15,7 @@ export class AddNewassignmentComponent implements OnInit{
   matieres: any[] =[];
   etudiants: any[] = [];
   // newDateRendu: Date
-  devoir = {idEtudiant:"",idMatiere:"",dateRendu:""}
+  devoir = {idEtudiant:"",idMatiere:"",dateRendu:"",estRendu:false}
   url="devoirs";
   constructor(private apiservice: ApiService, private router: Router) {
   }
@@ -37,6 +37,7 @@ export class AddNewassignmentComponent implements OnInit{
 
   ajouter(){
     // this.devoir.dateRendu = new Date(this.newDateRendu).toLocaleDateString("fr");
+
     this.apiservice.addEntity(this.url, this.devoir).subscribe( data =>{
       this.router.navigate(['']);
     })
