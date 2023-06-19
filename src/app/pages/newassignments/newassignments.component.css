@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   max-width: 100em;
+  margin-bottom: 1em;
 }
 .title-component {
   margin-left: 1.5em;
@@ -36,4 +37,13 @@
 
 .blue-text {
   color: blue;
+}
+
+select {
+  width: 10em;
+  height: 3em;
+  margin-right: 1em;
+  margin-top: 1em;
+  margin-left: 1.5em;
+  border-radius: 20px;
 }
