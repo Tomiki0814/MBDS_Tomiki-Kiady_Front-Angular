@@ -45,11 +45,11 @@
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: var(--primary) !important;
+  color: aqua;
 }
 
 .navbar-dark .navbar-brand img {
-  max-height: 60px;
+  max-height: 70px;
   transition: .5s;
 }
 

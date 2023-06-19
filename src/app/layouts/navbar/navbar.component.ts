@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   titre= "Gestion d'assignments";
+  visibility= false;
 
+
+  showMenu(){
+      this.visibility = !this.visibility;
+  }
 }
