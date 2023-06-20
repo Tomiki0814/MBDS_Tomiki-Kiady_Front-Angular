@@ -23,11 +23,17 @@ export class NewassignmentsComponent implements OnInit {
   listeFiltre = [{key: "Tous", value: 0}, {key: "Déja Rendue", value: 1}, {key: "A rendre", value: 2}]
   selectedId = 0;
 
-  // propriétés pour la pagination
+  // propriétés pour la pagination des devoirs non rendus
   page: number = 1;
   limit: number = 10;
   totalPages: number = 0;
   totalItem: number = 0
+
+  // propriétés pour la pagination des devoirs deja rendus
+  pageRendu: number = 1;
+  limitRendu: number = 10;
+  totalPagesRendu: number = 0;
+  totalItemRendu: number = 0
   data: any[] = [];
 
   devoirNonRendu: any[] = [];
@@ -52,17 +58,17 @@ export class NewassignmentsComponent implements OnInit {
       this.totalItem = data.totals;
       this.totalPages = this.totalItem % this.limit == 0 ? (this.totalItem / this.limit) : Math.floor(this.totalItem / this.limit) + 1;
       this.isLoading = false;
-      //console.log("nonRendu", this.devoirNonRendu);
+
 
     })
   }
 
   getDevoirRendu() {
-    let newurl = this.urlSort + true + "?page=" + this.page + "&limit=" + this.limit;
+    let newurl = this.urlSort + true + "?page=" + this.pageRendu + "&limit=" + this.limitRendu;
     this.apiservice.getEntity(newurl).subscribe(data => {
       this.devoirRendu = data.docs;
-      this.totalItem = data.totals;
-      this.totalPages = this.totalItem % this.limit == 0 ? (this.totalItem / this.limit) : Math.floor(this.totalItem / this.limit) + 1;
+      this.totalItemRendu = data.totals;
+      this.totalPagesRendu = this.totalItem % this.limit == 0 ? (this.totalItem / this.limit) : Math.floor(this.totalItem / this.limit) + 1;
       this.isLoading = false;
       //console.log("Rendu", this.devoirRendu);
     })
@@ -91,9 +97,16 @@ export class NewassignmentsComponent implements OnInit {
 
   // Pour mat-paginator
   handlePage(event: any) {
+    this.isLoading = true;
     this.page = event.pageIndex + 1;
     this.limit = event.pageSize;
-    // this.filtrer();
+    this.getDevoirNonRendu();
+  }
+  handlePageRendu(event: any) {
+    this.isLoading=true;
+    this.pageRendu = event.pageIndex + 1;
+    this.limitRendu = event.pageSize;
+    this.getDevoirRendu();
   }
 
 

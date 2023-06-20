@@ -7,21 +7,17 @@
     <span routerLink="add">Ajouter</span>
   </button>
 </div>
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Selection de la page des assigments"
-  (page)="handlePage($event)" class="demo-paginator" [length]="totalItem" [pageSize]="limit">
-</mat-paginator>
-<!-- <select name="filtre" [(ngModel)]="selectedId">
-  <option *ngFor="let item of listeFiltre" value="{{item.value}}">{{item.key}}</option>
-</select>
-<button class="btn btn-primary" (click)="filtrer()">Filtrer</button> -->
-<!-- Mat card -->
+
+
 <div class="mysection">
 
   <div class="todo section1">
     <div class="titre">
       <h2>A rendre</h2>
     </div>
-
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Selection de la page des assigments"
+                   (page)="handlePage($event)" class="demo-paginator" [length]="totalItem" [pageSize]="limit">
+    </mat-paginator>
     <div class="content-todo" cdkDropList #NonRenduList="cdkDropList" [cdkDropListConnectedTo]="[RenduList]"  [cdkDropListData]="devoirNonRendu" (cdkDropListDropped)="drop($event)">
       <div class="row">
         <!-- routerLink="{{item._id}}" -->
@@ -51,7 +47,9 @@
     <div class="titre">
       <h2>Rendu</h2>
     </div>
-
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Selection de la page des assigments"
+                   (page)="handlePageRendu($event)" class="demo-paginator" [length]="totalItemRendu" [pageSize]="limitRendu">
+    </mat-paginator>
     <div class="content-todo" cdkDropList #RenduList="cdkDropList" [cdkDropListConnectedTo]="[NonRenduList]" [cdkDropListData]="devoirRendu" (cdkDropListDropped)="drop($event)">
       <div class="row">
         <!-- routerLink="{{item._id}}" -->

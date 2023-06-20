@@ -96,3 +96,18 @@ select {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1600px) {
+  .card {
+    max-width: 250px;
+    margin: 10px auto;
+    cursor: pointer;
+  }
+}
+@media (max-width: 1340px) {
+  .card {
+    max-width: 300px;
+    margin: 10px auto;
+    cursor: pointer;
+  }
+}
+
