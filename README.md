@@ -49,6 +49,7 @@ Chat Gpt nous a aussi été d'un grande aide ainsi que des tutoriel sur youtube.
 - On peut sélectionner un étudiant pour voir ses notes. 
 - Liste des Matieres.
 - On peut selectionner une matiere pour voir tous les devoirs des etudiants sur ce dernier.
+- On peut filtrer les notes dans chaque matières entre un intervalle de deux nombres
 
 
 ## Notre équipe
