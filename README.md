@@ -1,4 +1,4 @@
-# AssignmentApp
+# MBDSMagascar2022_2023_front
 
 ## Lancement du projet
 
@@ -9,7 +9,7 @@ Pour lancer le projet en locale:
 - Il y a 2 domaines: locale et celui deployé il faut commenter ce que vous n'utiliser pas. Par defaut c'est l'url du back-end déja deployé qui sera utilisé
 - Lancer `ng serve` pour lancer le projet. Ouvrir ensuite l'URL affiché
 
-## Nos contributions sur le projet
+## A propos du projet
 
 Pour faire le projet on a utilisé des composants issus de [Angular material](https://material.angular.io). 
 Chat Gpt nous a aussi été d'un grande aide ainsi que des tutoriel sur youtube.
