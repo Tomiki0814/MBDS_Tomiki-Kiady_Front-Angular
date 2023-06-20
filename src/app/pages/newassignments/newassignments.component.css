@@ -54,10 +54,10 @@ select {
 
 .todo  {
   background-color: rgb(145, 145, 145);
-  width: 100em;
+  /*width: 100em;*/
   display: inline-block;
   vertical-align: top;
-  margin-right: 150px;
+  /*margin-right: 150px;*/
 }
 /* .content-todo {
   max-width: 50em;
@@ -66,7 +66,7 @@ select {
 .row {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 
 .card {
@@ -83,7 +83,16 @@ select {
 .todo{
   background-color: wheat;
 }
-
+.section1{
+  width: 47%;
+}
+.section2{
+  width: 47%;
+}
 .titre{
   text-align: center;
+}
+.mysection{
+  display: flex;
+  justify-content: space-between;
 }
