@@ -21,6 +21,7 @@ export class EditNewassignmentComponent implements OnInit{
   devoir = new Devoir("","", new Etudiant(),new Matiere(),10,"");
   id=""
   isLoading= true;
+  errorMessage = "";
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.getListeEtudiant();
@@ -53,10 +54,23 @@ export class EditNewassignmentComponent implements OnInit{
 
   editDevoir(){
     this.isLoading =true;
-    this.apiservice.updateEntity(this.urlDevoir,this.id,this.devoir).subscribe( data =>{
-      this.isLoading =false;
-      this.router.navigate(['app/assignments/'+this.id]);
-    })
+    if(this.devoir.estRendu){
+      if(this.devoir.note < 0 || this.devoir.note >20){
+        this.errorMessage = "Note doit être compris entre 0 et 20"
+        this.isLoading =false;
+      }else{
+        this.apiservice.updateEntity(this.urlDevoir,this.id,this.devoir).subscribe( data =>{
+          this.isLoading =false;
+          this.router.navigate(['app/assignments/'+this.id]);
+        })
+      }
+    }else{
+      this.apiservice.updateEntity(this.urlDevoir,this.id,this.devoir).subscribe( data =>{
+        this.isLoading =false;
+        this.router.navigate(['app/assignments/'+this.id]);
+      })
+    }
+
   }
 
 }
