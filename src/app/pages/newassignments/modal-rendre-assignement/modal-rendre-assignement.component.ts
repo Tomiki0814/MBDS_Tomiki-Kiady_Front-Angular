@@ -15,13 +15,16 @@ export class ModalRendreAssignementComponent implements OnInit{
   idDevoir: any;
   urlDevoir="devoirs/";
   devoir = new Devoir("","", new Etudiant(),new Matiere());
+  isLoading= false;
   constructor(public modalRef: BsModalRef, private apiservice: ApiService, private router: Router) {
   }
 
   rendreDevoir() {
+    this.isLoading= true;
     this.devoir.estRendu = true;
     this.apiservice.updateEntity(this.urlDevoir,this.idDevoir,this.devoir).subscribe( data =>{
       this.modalRef.hide();
+      this.isLoading= false;
       this.router.navigate(['app/assignments/'+this.idDevoir]);
     })
 

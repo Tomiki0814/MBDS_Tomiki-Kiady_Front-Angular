@@ -18,20 +18,22 @@ export class NewassignementDetailsComponent implements OnInit{
   id=""
   devoir = new Devoir("","", new Etudiant(),new Matiere());
   isAdmin=false;
+  isLoading=false;
   constructor(private route: ActivatedRoute,private apiservice: ApiService, private guard:AuthService,private router: Router) {
   }
   ngOnInit(): void {
-    this.isAdmin = this.guard.isAdmin();
     this.id = this.route.snapshot.params['id'];
     this.getData()
 
   }
 
   getData(){
+    this.isLoading=true;
     this.apiservice.getEntityDetails(this.url, this.id).subscribe( data =>{
         if(data!=null && data.length!=0){
           this.devoir = data[0]
         }
+        this.isLoading=false;
     })
   }
 

@@ -39,9 +39,6 @@
               Remarque : {{item.remarque}}
             </p>
           </mat-card-content>
-          <mat-card-actions>
-            <button class="btn btn-success" *ngIf="!item.estRendu" (click)="openModal(item._id)">Rendre</button>
-          </mat-card-actions>
         </mat-card>
       </div>
     </div>
@@ -65,15 +62,9 @@
             <p>
               Etudiant : <a routerLink="{{item._id}}">{{item.idEtudiant.nom}}</a>
             </p>
-            <p *ngIf="item.note" style="font: bold">
-              Remarque : {{item.remarque}}
-            </p>
+
           </mat-card-content>
-          <mat-card-actions>
-            <p style="margin-left: 10px;">
-              Note : <span [ngClass]="item.note < 10 ? 'red-text ' : 'blue-text '">{{item.note}}</span>
-            </p>
-          </mat-card-actions>
+
         </mat-card>
       </div>
     </div>
