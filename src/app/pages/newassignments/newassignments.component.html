@@ -3,9 +3,7 @@
   <div class="title-component">
     <h3>Assignments </h3>
   </div>
-  <button class="btn btn-primary">
-    <span routerLink="add">Ajouter</span>
-  </button>
+  <button class="btn btn-primary" routerLink="add">Ajouter</button>
 </div>
 
 
@@ -13,7 +11,7 @@
 
   <div class="todo section1">
     <div class="titre">
-      <h2>A rendre</h2>
+      <h2>À rendre</h2>
     </div>
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Selection de la page des assigments"
                    (page)="handlePage($event)" class="demo-paginator" [length]="totalItem" [pageSize]="limit">

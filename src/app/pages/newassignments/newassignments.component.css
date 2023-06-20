@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   max-width: 100em;
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 .title-component {
@@ -81,7 +82,8 @@ select {
 }
 
 .todo{
-  background-color: wheat;
+  background-color: #ffe169;
+  border-radius: 2%;
 }
 .section1{
   width: 47%;
