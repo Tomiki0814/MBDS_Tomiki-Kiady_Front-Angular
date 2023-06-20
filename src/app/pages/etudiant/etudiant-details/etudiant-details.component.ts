@@ -13,6 +13,7 @@ export class EtudiantDetailsComponent implements OnInit {
   id ="648041e5e9d1a2c72ffae682";
   listeDevoirs:any[] = [];
   etudiant ="";
+  isLoading = false;
 
 
   constructor(private route: ActivatedRoute,private apiservice: ApiService) {
@@ -26,11 +27,12 @@ export class EtudiantDetailsComponent implements OnInit {
 
 
   getDevoirEtudiant(){
+    this.isLoading = true;
     this.apiservice.getEntityDetails(this.url,this.id).subscribe(data=> {
         this.listeDevoirs = data;
         if(data.length!=0){
           this.etudiant = data[0].idEtudiant.nom+" "+data[0].idEtudiant.prenom;
-          console.log(data[0])
+          this.isLoading = false;
         }
     })
   }

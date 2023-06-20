@@ -50,7 +50,7 @@ export class NewassignmentsComponent implements OnInit {
       this.totalItem = data.totals;
       this.totalPages = this.totalItem % this.limit == 0 ? (this.totalItem / this.limit) : Math.floor(this.totalItem / this.limit) +1;
       this.isLoading = false;
-      console.log("nonRendu", this.devoirNonRendu);
+      //console.log("nonRendu", this.devoirNonRendu);
 
     })
   }
@@ -62,7 +62,7 @@ export class NewassignmentsComponent implements OnInit {
       this.totalItem = data.totals;
       this.totalPages = this.totalItem % this.limit == 0 ? (this.totalItem / this.limit) : Math.floor(this.totalItem / this.limit) +1;
       this.isLoading = false;
-      console.log("Rendu", this.devoirRendu);
+      //console.log("Rendu", this.devoirRendu);
     })
   }
 
@@ -117,13 +117,23 @@ export class NewassignmentsComponent implements OnInit {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     }else {
+      
+      const transferredItem:any = event.previousContainer.data[event.previousIndex];
+      if(this.devoirNonRendu.some(item => item._id === transferredItem._id)){
+        console.log("devoir à rendre")
+      }else{
+        console.log("devoir annuler")
+      }
+
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex,
       );
+
     }
+
   }
 
 }

@@ -1,6 +1,12 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
 <div class="title-component">
   <h4>Note {{matiere}} </h4>
 </div>
+<form>
+  <input type="number" name="minNote" [(ngModel)]="min">
+  <input type="number" name="maxNote" [(ngModel)]="max">
+  <button (click)="filtrer()">Filtrer</button>
+</form>
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
