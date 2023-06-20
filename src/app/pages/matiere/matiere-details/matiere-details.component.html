@@ -3,9 +3,10 @@
   <h4>Note {{matiere}} </h4>
 </div>
 <form>
-  <input type="number" name="minNote" [(ngModel)]="min">
+  <input type="number" name="minNote" [(ngModel)]="min" style="margin-left: 24px;">
+  <label for="jusqua" style="margin-right: 1em;"> à </label>
   <input type="number" name="maxNote" [(ngModel)]="max">
-  <button (click)="filtrer()">Filtrer</button>
+  <button class="btn btn-info" style="color: white" (click)="filtrer()">Filtrer</button>
 </form>
 <div class="table-responsive">
   <table class="table table-striped">

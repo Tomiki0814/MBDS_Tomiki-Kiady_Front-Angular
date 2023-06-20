@@ -21,3 +21,8 @@
 .blue-text {
   color: blue;
 }
+
+input {
+  margin-right: 1em;
+  width: 7em;
+}
