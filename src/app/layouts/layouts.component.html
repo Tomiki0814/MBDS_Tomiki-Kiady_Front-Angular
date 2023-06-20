@@ -1,8 +1,13 @@
-<app-sidebar></app-sidebar>
 <app-navbar></app-navbar>
+<div class="mycontainer">
+  <div class="mysidebar"><app-sidebar></app-sidebar></div>
+  <div class="mycontent">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 
 
-<main style="margin-top: 58px; margin-left: 250px">
-  <router-outlet></router-outlet>
-</main>
+
+
+
 

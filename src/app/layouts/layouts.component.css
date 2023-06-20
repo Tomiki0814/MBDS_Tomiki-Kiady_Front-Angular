@@ -1,0 +1,23 @@
+.mycontainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.mysidebar{
+  width: 13%;
+  background-color: white;
+}
+
+.mycontent{
+  width: 85%;
+  margin:0 auto;
+}
+
+@media (max-width: 991.98px) {
+  .mysidebar{
+    display: none;
+  }
+  .mycontent{
+    width: 100%;
+  }
+}

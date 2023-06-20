@@ -7,8 +7,8 @@ import {Etudiant} from "../../pages/etudiant/etudiant.model";
 })
 export class ApiService {
 
-  //domaine=""; prod
-  domaine ="http://localhost:8010/api/";//locale
+  domaine="https://mbds-assignement-back-end-api.onrender.com/api/"; //prod
+  //domaine ="http://localhost:8010/api/";//locale
   constructor(private http:HttpClient) { }
 
   getEntity(url:string){
