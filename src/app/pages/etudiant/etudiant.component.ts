@@ -28,6 +28,7 @@ export class EtudiantComponent implements OnInit {
 
   getEtudiants(){
 
+    this.isLoading= true;
     let newurl = this.url + "?page=" + this.page + "&limit=" + this.limit;
     this.apiservice.getEntity(newurl).subscribe(data => {
       this.etudiants = data.docs;

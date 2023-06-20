@@ -10,7 +10,7 @@ import {ApiService} from "../../shared/services/api.service";
 export class MatiereComponent implements OnInit  {
 
 
-  url="matiere"
+  url="all/matiere"
   matieres:Matiere[] = [];
   isLoading=true;
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class MatiereComponent implements OnInit  {
   }
   getMatieres(){
     this.apiservice.getEntity(this.url).subscribe(data => {
-      this.matieres = data.docs;
+      this.matieres = data;
       this.isLoading = false
     })
   }
