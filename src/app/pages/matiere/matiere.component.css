@@ -1,5 +1,7 @@
 .title-component {
  margin-left: 1.5em;
+ max-width: 100em;
+ margin-top: 1em;
 }
 
 table {

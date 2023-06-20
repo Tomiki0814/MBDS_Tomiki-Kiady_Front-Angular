@@ -1,3 +1,9 @@
+.title-component {
+  margin-left: 8px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+ }
+
 .red-text {
   color: red;
 }

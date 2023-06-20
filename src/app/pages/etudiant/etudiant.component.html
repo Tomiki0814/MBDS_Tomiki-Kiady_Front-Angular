@@ -1,5 +1,9 @@
 <app-spinner *ngIf="isLoading"></app-spinner>
-<h2>Etudiant</h2>
+<div class="content-header">
+  <div class="title-component">
+    <h2>Etudiant</h2>
+  </div>
+</div>
 
 <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Selection de la page des assigments"
   (page)="handlePage($event)" class="demo-paginator" [length]="totalPages" [pageSize]="limit">
