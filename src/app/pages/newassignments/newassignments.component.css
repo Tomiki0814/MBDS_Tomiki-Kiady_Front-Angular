@@ -48,10 +48,20 @@ select {
   border-radius: 20px;
 }
 
-
-.content {
-  max-width: 100em;
+.container {
+  display: flex;
 }
+
+.todo  {
+  background-color: rgb(145, 145, 145);
+  width: 100em;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 150px;
+}
+/* .content-todo {
+  max-width: 50em;
+} */
 
 .row {
   display: flex;
@@ -60,7 +70,7 @@ select {
 }
 
 .card {
-  max-width: 400px;
+  max-width: 300px;
   margin: 10px 20px;
   cursor: pointer;
 }

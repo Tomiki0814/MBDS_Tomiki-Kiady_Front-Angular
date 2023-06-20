@@ -7,11 +7,13 @@ import {AuthService} from "../../shared/services/auth.service";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import {ModalRendreAssignementComponent} from "./modal-rendre-assignement/modal-rendre-assignement.component";
 import { Router } from '@angular/router';
+import {CdkDragDrop, CdkDropList, CdkDrag, transferArrayItem, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-newassignments',
   templateUrl: './newassignments.component.html',
-  styleUrls: ['./newassignments.component.css']
+  styleUrls: ['./newassignments.component.css'],
+
 })
 export class NewassignmentsComponent implements OnInit {
 
@@ -26,13 +28,42 @@ export class NewassignmentsComponent implements OnInit {
   totalPages: number = 0;
   totalItem:number = 0
   data: any[] = [];
+
+  devoirNonRendu: any[] = [];
+  devoirRendu: any[] = [];
+
   modalRef: BsModalRef;
   isLoading = true;
   ngOnInit(): void {
-    this.filtrer();
+    // this.filtrer();
+    this.getDevoirNonRendu();
+    this.getDevoirRendu();
   }
 
   constructor(private apiservice: ApiService, private guard: AuthService, private modalService: BsModalService, private router: Router) {
+  }
+
+  getDevoirNonRendu() {
+    let newurl = this.urlSort+false + "?page=" + this.page + "&limit=" + this.limit;
+    this.apiservice.getEntity(newurl).subscribe(data => {
+      this.devoirNonRendu = data.docs;
+      this.totalItem = data.totals;
+      this.totalPages = this.totalItem % this.limit == 0 ? (this.totalItem / this.limit) : Math.floor(this.totalItem / this.limit) +1;
+      this.isLoading = false;
+      console.log("nonRendu", this.devoirNonRendu);
+
+    })
+  }
+
+  getDevoirRendu() {
+    let newurl = this.urlSort+true + "?page=" + this.page + "&limit=" + this.limit;
+    this.apiservice.getEntity(newurl).subscribe(data => {
+      this.devoirRendu = data.docs;
+      this.totalItem = data.totals;
+      this.totalPages = this.totalItem % this.limit == 0 ? (this.totalItem / this.limit) : Math.floor(this.totalItem / this.limit) +1;
+      this.isLoading = false;
+      console.log("Rendu", this.devoirRendu);
+    })
   }
 
   getDevoir() {
@@ -59,7 +90,7 @@ export class NewassignmentsComponent implements OnInit {
   handlePage(event: any) {
     this.page = event.pageIndex+1;
     this.limit = event.pageSize;
-    this.filtrer();
+    // this.filtrer();
   }
 
 
@@ -73,14 +104,26 @@ export class NewassignmentsComponent implements OnInit {
 
   }
 
-  filtrer() {
-    if(this.selectedId ==0){
-      this.getDevoir();
-    }else{
-      let filtre = this.selectedId ==1 ? true : false;
-      this.filterByStatus(filtre)
+  // filtrer() {
+  //   if(this.selectedId ==0){
+  //     this.getDevoir();
+  //   }else{
+  //     let filtre = this.selectedId ==1 ? true : false;
+  //     this.filterByStatus(filtre)
+  //   }
+  // }
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    }else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
     }
   }
-
 
 }

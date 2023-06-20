@@ -18,6 +18,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 import { AssignmentsComponent } from './pages/assignements/assignments.component';
 import { RenduDirective } from './shared/rendu.directive';
 import { FormsModule } from '@angular/forms';
@@ -79,6 +81,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatInputModule, MatFormFieldModule, MatDatepickerModule,
     MatListModule, MatCardModule, MatCheckboxModule, MatSlideToggleModule,
     MatTableModule, MatPaginatorModule,
+    DragDropModule,
     ModalModule.forRoot(),
     AppRoutingModule, MatProgressSpinnerModule
   ],
