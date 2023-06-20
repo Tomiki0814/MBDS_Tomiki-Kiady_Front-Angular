@@ -1,27 +1,51 @@
 # AssignmentApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+## Lancement du projet
 
-## Development server
+Pour lancer le projet en locale:
+- Cloner le repository puis installer les dependances avec `npm install`
+- Lancer le [Back-end](https://github.com/Tomiki0814/MBDS_Tomiki-Kiady_Front-Angular) en locale
+- Entrer dans le fichier 'app/shared/services/api.service.ts' et choisissez un domaine
+- Il y a 2 domaines: locale et celui deployé il faut commenter ce que vous n'utiliser pas. Par defaut c'est l'url du back-end déja deployé qui sera utilisé
+- Lancer `ng serve` pour lancer le projet. Ouvrir ensuite l'URL affiché
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Nos contributions sur le projet
 
-## Code scaffolding
+Pour faire le projet on a utilisé des composants issus de [Angular material](https://material.angular.io). 
+Pour le design on s'est inspiré des designs sur [dribbble](https://dribbble.com) mais aucun template n'a été utilisé.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Hébergement
 
-## Build
+- Le site est hébergé sur [render.com](https://mbds-assignement-front-end.onrender.com)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Login
+- On a inserer les utilisateur dans mongo.
+- On a creer deux profils d'utilisateur: Admin et simple utilisateur.
+- Un ADMIN aura la possibilité de modifier et supprimer un assignement
+- Un utilisateur normal pourra juste consulter l'application sans pouvoir faire des modifications.
+- On utilise l'api login pour se connecter
 
-## Running unit tests
+- Voici les login des utilisateurs:
+  - ADMIN: {username:"Tomiki",mdp:"admin"}
+  - SIMPLE: {username:"Kiady",mdp:"kiady"}
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Les fonctionnalités présent dans le projet
 
-## Running end-to-end tests
+#### Gestion des devoirs
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Arrivé sur la page home on a listé les devoirs sous forme de card.
+- Un devoir est représenté par un card avec ***le nom du devoir, le nom de la matière, l'image de la matière, le nom de l'élève, la date de rendu ainsi que la photo du professeur***.
+- Un devoir qui n'est pas encore rendue sera afficher avec l'option `rendre`
+- Pour rendre un devoir il suffit de cliquer sur rendre et ***un modal apparaitra pour inserer la note et les remarques***.
+- Pour voir les détails d'un devoir on clique sur le card.
+- A noter que dans les details seul l'ADMIN verra les boutons supprimer et modifier
 
-## Further help
+#### Fonctionnalités en plus
+- On peut sélectionner un étudiant pour voir ses notes. 
+- On peut selectionner une matiere pour voir tous les devoirs sur ce dernier.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Notre équipe
+- S.RAMANANTSOA Andrianina Tomiki n°59)
+- RAKOTOHARINJATOVO kiady n°25)
