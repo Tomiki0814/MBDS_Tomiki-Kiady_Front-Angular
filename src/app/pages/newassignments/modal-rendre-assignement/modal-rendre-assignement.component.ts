@@ -14,7 +14,7 @@ import {Matiere} from "../../../shared/models/Matiere.modele";
 export class ModalRendreAssignementComponent implements OnInit{
   idDevoir: any;
   urlDevoir="devoirs/";
-  devoir = new Devoir("","", new Etudiant(),new Matiere());
+  devoir = new Devoir("","", new Etudiant(),new Matiere(),10,"");
   isLoading= false;
   constructor(public modalRef: BsModalRef, private apiservice: ApiService, private router: Router) {
   }

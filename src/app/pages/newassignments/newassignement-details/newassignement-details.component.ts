@@ -16,7 +16,7 @@ export class NewassignementDetailsComponent implements OnInit{
 
   url="devoirs/";
   id=""
-  devoir = new Devoir("","", new Etudiant(),new Matiere());
+  devoir = new Devoir("","", new Etudiant(),new Matiere(),10,"");
   isAdmin=false;
   isLoading=false;
   constructor(private route: ActivatedRoute,private apiservice: ApiService, private guard:AuthService,private router: Router) {
@@ -39,7 +39,9 @@ export class NewassignementDetailsComponent implements OnInit{
   }
 
   deleteDevoir() {
+    this.isLoading=true;
     this.apiservice.DeleteEntity(this.url, this.id).subscribe( data =>{
+      this.isLoading=false;
       this.router.navigate(['']);
     })
   }
