@@ -47,3 +47,18 @@ select {
   margin-left: 1.5em;
   border-radius: 20px;
 }
+
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100em;
+}
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
