@@ -34,5 +34,6 @@
 </table>
 <div *ngIf="isAdmin">
   <button class="btn btn-warning" style="margin-right: 1em;" routerLink="/app/assignments/edit/{{devoir._id}}">Modifier </button>
+  <button class="btn btn-info" style="margin-right: 1em;">Annuler </button>
   <button class="btn btn-danger" (click)="deleteDevoir()">Supprimer</button>
 </div>
