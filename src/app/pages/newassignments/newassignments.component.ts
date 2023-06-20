@@ -6,6 +6,7 @@ import {authGuard} from "../../shared/auth.guard";
 import {AuthService} from "../../shared/services/auth.service";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import {ModalRendreAssignementComponent} from "./modal-rendre-assignement/modal-rendre-assignement.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newassignments',
@@ -31,7 +32,7 @@ export class NewassignmentsComponent implements OnInit {
     this.filtrer();
   }
 
-  constructor(private apiservice: ApiService, private guard: AuthService, private modalService: BsModalService) {
+  constructor(private apiservice: ApiService, private guard: AuthService, private modalService: BsModalService, private router: Router) {
   }
 
   getDevoir() {
@@ -80,4 +81,6 @@ export class NewassignmentsComponent implements OnInit {
       this.filterByStatus(filtre)
     }
   }
+
+
 }
