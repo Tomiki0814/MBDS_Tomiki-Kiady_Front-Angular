@@ -12,7 +12,7 @@ Pour lancer le projet en locale:
 ## Nos contributions sur le projet
 
 Pour faire le projet on a utilisé des composants issus de [Angular material](https://material.angular.io). 
-Pour le design on s'est inspiré des designs sur [dribbble](https://dribbble.com) mais aucun template n'a été utilisé.
+Chat Gpt nous a aussi été d'un grande aide ainsi que des tutoriel sur youtube.
 
 ### Hébergement
 
@@ -33,19 +33,22 @@ Pour le design on s'est inspiré des designs sur [dribbble](https://dribbble.com
 
 #### Gestion des devoirs
 
-- Arrivé sur la page home on a listé les devoirs sous forme de card.
+- Arrivé sur la page d'accueil on a listé les devoirs sous forme de card.
+- l'affichage est divisée en 2, à gauche la liste des devoirs à rendre et à droite les devoirs déja rendu.
 - Un devoir est représenté par un card avec ***le nom du devoir, le nom de la matière, l'image de la matière, le nom de l'élève, la date de rendu ainsi que la photo du professeur***.
-- Un devoir qui n'est pas encore rendue sera afficher avec l'option `rendre`
-- Pour rendre un devoir il suffit de cliquer sur rendre et ***un modal apparaitra pour inserer la note et les remarques***.
-- Pour voir les détails d'un devoir on clique sur le card.
-- A noter que dans les details seul l'ADMIN verra les boutons supprimer et modifier
+- Pour rendre un devoir il suffit de faire un drag and drop sur le devoir et ***un modal apparaitra pour inserer la note et les remarques***.
+- On peut annuler un devoir en faisant un drag and drop dans devoir rendu vers la liste des devoirs à rendre
+- Pour voir les détails d'un devoir on cliquant sur le card.
+- On peut également modifier et supprimer un devoir.
+- A noter que dans les details seul l'ADMIN verra les boutons supprimer et modifier.
 
 #### Fonctionnalités en plus
+- Affichage liste des étudiants
 - On peut sélectionner un étudiant pour voir ses notes. 
-- On peut selectionner une matiere pour voir tous les devoirs sur ce dernier.
-
+- Liste des Matieres.
+- On peut selectionner une matiere pour voir tous les devoirs des etudiants sur ce dernier.
 
 
 ## Notre équipe
-- S.RAMANANTSOA Andrianina Tomiki n°59)
-- RAKOTOHARINJATOVO kiady n°25)
+- S.RAMANANTSOA Andrianina Tomiki n°59
+- RAKOTOHARINJATOVO kiady n°25
