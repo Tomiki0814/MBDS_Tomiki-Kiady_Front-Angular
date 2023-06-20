@@ -16,6 +16,7 @@ export class NewassignementDetailsComponent implements OnInit{
 
   url="devoirs/";
   id=""
+  urlAnnuler = "devoirs/annuler/";
   devoir = new Devoir("","", new Etudiant(),new Matiere(),10,"");
   isAdmin=false;
   isLoading=false;
@@ -45,4 +46,17 @@ export class NewassignementDetailsComponent implements OnInit{
       this.router.navigate(['']);
     })
   }
+
+    AnnulerDevoir(url: string, id: string, entity: any) {
+    this.isLoading = true;
+    this.apiservice.updateEntity(url, id, entity).subscribe(object => {
+      this.isLoading = false;
+      this.router.navigate(['app/assignments']);
+    })
+  }
+
+  annuler() {
+    this.AnnulerDevoir(this.urlAnnuler,this.id,this.devoir);
+  }
+
 }
