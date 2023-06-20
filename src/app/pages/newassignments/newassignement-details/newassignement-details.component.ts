@@ -51,7 +51,7 @@ export class NewassignementDetailsComponent implements OnInit{
     this.isLoading = true;
     this.apiservice.updateEntity(url, id, entity).subscribe(object => {
       this.isLoading = false;
-      this.router.navigate(['app/assignments']);
+      this.ngOnInit()
     })
   }
 
