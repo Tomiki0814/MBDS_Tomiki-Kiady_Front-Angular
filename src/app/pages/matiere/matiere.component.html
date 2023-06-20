@@ -14,7 +14,7 @@
     <tbody>
       <tr *ngFor="let etudiant of matieres ">
         <td><a routerLink="{{etudiant._id}}">{{etudiant.nom}}</a></td>
-        <td><img src="{{etudiant.image}}" width="85px"></td>
+        <td><img src="{{etudiant.images}}" width="85px"></td>
         <td><img src="assets/img/profil.png" width="60px" style="clip-path: ellipse(30% 50%);">{{etudiant.prof}}</td>
       </tr>
 

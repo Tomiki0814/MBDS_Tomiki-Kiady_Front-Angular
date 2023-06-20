@@ -21,7 +21,7 @@
         <!-- routerLink="{{item._id}}" -->
         <mat-card class="card" *ngFor="let item of devoirNonRendu" cdkDrag routerLink="{{item._id}}">
           <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
+            <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' + item.idMatiere.images + ')'}"></div>
             <mat-card-title>{{item.idMatiere.nom}}</mat-card-title>
             <mat-card-subtitle>Prof: {{item.idMatiere.prof}}</mat-card-subtitle>
           </mat-card-header>
@@ -30,7 +30,7 @@
               Date de Rendu : <strong>{{item.dateRendu | date:'dd/MM/yyyy'}}</strong>
             </p>
             <p>
-              Etudiant : <a routerLink="{{item._id}}">{{item.idEtudiant.nom}}</a>
+              Etudiant : {{item.idEtudiant.nom + " " +item.idEtudiant.prenom}}
             </p>
             <p *ngIf="item.note" style="font: bold">
               Remarque : {{item.remarque}}
@@ -53,7 +53,7 @@
         <!-- routerLink="{{item._id}}" -->
         <mat-card class="card" *ngFor="let item of devoirRendu" cdkDrag routerLink="{{item._id}}">
           <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
+            <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' + item.idMatiere.images + ')'}"></div>
             <mat-card-title>{{item.idMatiere.nom}}</mat-card-title>
             <mat-card-subtitle>Prof: {{item.idMatiere.prof}}</mat-card-subtitle>
           </mat-card-header>
@@ -62,7 +62,7 @@
               Date de Rendu : <strong>{{item.dateRendu | date:'dd/MM/yyyy'}}</strong>
             </p>
             <p>
-              Etudiant : <a routerLink="{{item._id}}">{{item.idEtudiant.nom}}</a>
+              Etudiant : {{item.idEtudiant.nom + " " +item.idEtudiant.prenom}}
             </p>
 
           </mat-card-content>
