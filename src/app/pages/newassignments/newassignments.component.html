@@ -39,17 +39,27 @@
 <!-- Mat card -->
 <div class="content">
   <div class="row">
-    <mat-card class="example-card" *ngFor="let item of data">
+    <mat-card class="card" *ngFor="let item of data">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{item.idMatiere.nom}}</mat-card-title>
-        <mat-card-subtitle>{{item.dateRendu | date:'dd/MM/yyyy'}}</mat-card-subtitle>
+        <mat-card-subtitle>Prof: {{item.idMatiere.prof}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <a routerLink="{{item._id}}">{{item.idEtudiant.nom}}</a>
+        <p>
+          Rendu : {{item.dateRendu | date:'dd/MM/yyyy'}}
+        </p>
+        <p>
+          Etudiant : <a routerLink="{{item._id}}">{{item.idEtudiant.nom}}</a>
+        </p>
+        <p *ngIf="item.note" style="font: bold">
+          Remarque : {{item.remarque}}
+        </p>
       </mat-card-content>
       <mat-card-actions>
-        <p [ngClass]="item.note < 10 ? 'red-text ' : 'blue-text '">{{item.note}}</p>
+        <p *ngIf="item.note" style="margin-left: 10px;">
+          Note : <span [ngClass]="item.note < 10 ? 'red-text ' : 'blue-text '">{{item.note}}</span>
+        </p>
         <button class="btn btn-success" *ngIf="!item.estRendu" (click)="openModal(item._id)">Rendre</button>
       </mat-card-actions>
     </mat-card>

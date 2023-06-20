@@ -50,12 +50,18 @@ select {
 
 
 .content {
-  display: flex;
-  justify-content: space-between;
   max-width: 100em;
 }
-.example-card {
+
+.row {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.card {
   max-width: 400px;
+  margin: 10px 20px;
 }
 
 .example-header-image {
