@@ -10,10 +10,10 @@
       </button>
       <div class="collapse navbar-collapse" [ngClass]="{'show':visibility}" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0 pe-4">
-          <a routerLink="/" class="nav-item nav-link" *ngIf="visibility">Assignements</a>
-          <a routerLink="etudiant" class="nav-item nav-link" *ngIf="visibility">Etudiant</a>
-          <a routerLink="matiere" class="nav-item nav-link" *ngIf="visibility">Matiere</a>
-          <a routerLink="/" class="nav-item nav-link">Déconnexion</a>
+          <a routerLink="/" class="nav-item nav-link" *ngIf="visibility" (click)="redirect('/')">Assignements</a>
+          <a class="nav-item nav-link" *ngIf="visibility" (click)="redirect('app/etudiant')">Etudiant</a>
+          <a class="nav-item nav-link" *ngIf="visibility" (click)="redirect('app/matiere')">Matiere</a>
+          <a class="nav-item nav-link" (click)="logOut()">Déconnexion</a>
         </div>
       </div>
     </nav>

@@ -24,7 +24,9 @@
   bottom: 45px;
   z-index: 99;
 }
-
+a:hover{
+  cursor: pointer;
+}
 
 /*** Navbar ***/
 .navbar-dark .navbar-nav .nav-link {
