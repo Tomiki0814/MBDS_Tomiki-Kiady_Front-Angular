@@ -35,7 +35,7 @@ Chat Gpt nous a aussi été d'un grande aide ainsi que des tutoriel sur youtube.
 
 - Arrivé sur la page d'accueil on a listé les devoirs sous forme de card.
 - l'affichage est divisée en 2, à gauche la liste des devoirs à rendre et à droite les devoirs déja rendu.
-- Un devoir est représenté par un card avec ***le nom du devoir, le nom de la matière, l'image de la matière, le nom de l'élève, la date de rendu ainsi que la photo du professeur***.
+- Un devoir est représenté par un card avec ***le nom du devoir, le nom de la matière, l'image de la matière, le nom de l'élève, ainsi que la date de rendu***.
 - Pour rendre un devoir il suffit de faire un drag and drop sur le devoir et ***un modal apparaitra pour inserer la note et les remarques***.
 - La note doit être compris entre 0 et 20
 - On peut annuler un devoir en faisant un drag and drop dans devoir rendu vers la liste des devoirs à rendre
