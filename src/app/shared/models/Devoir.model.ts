@@ -12,11 +12,13 @@ export class Devoir {
   estRendu:boolean
 
 
-  constructor(id: string, nom: string, idEtudiant: Etudiant, idMatiere: Matiere) {
+  constructor(id: string, nom: string, idEtudiant: Etudiant, idMatiere: Matiere,note:number,remarque:string) {
     this._id = id;
     this.nom = nom;
     this.idEtudiant = idEtudiant;
     this.idMatiere = idMatiere;
+    this.note = note;
+    this.remarque = remarque;
   }
 }
 

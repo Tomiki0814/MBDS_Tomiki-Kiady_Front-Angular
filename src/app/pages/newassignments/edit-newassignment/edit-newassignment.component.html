@@ -1,9 +1,9 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
 <h4>Edit</h4>
 
 <form>
   <div class="form-group">
     <label for="matiere">Matiere</label>
-
     <select name="matiere" class="form-control" id="matiere" [(ngModel)]="devoir.idMatiere._id">
       <option *ngFor="let item of matieres" value="{{item._id}}">{{item.nom}}</option>
     </select>
@@ -14,12 +14,20 @@
       <option *ngFor="let item of etudiants" value="{{item._id}}">{{item.nom}}</option>
     </select>
   </div>
-    <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill">
     <mat-label>Date de rendu</mat-label>
     <input matInput [matDatepicker]="picker" [(ngModel)]="devoir.dateRendu" name="date" required>
     <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
+  <div class="form-group" *ngIf="devoir.estRendu">
+    <label for="note">Note</label>
+    <input class="form-group" type="number" name="note" id="note" [(ngModel)]="devoir.note">
+  </div>
+  <div class="form-group" *ngIf="devoir.estRendu">
+    <label for="remarque">Remarque</label>
+    <input class="form-group" type="text" name="remarque" id="remarque" [(ngModel)]="devoir.remarque">
+  </div>
   <button class="btn btn-primary" (click)="editDevoir()">Modifier</button>
 </form>
