@@ -42,6 +42,8 @@ import { EditNewassignmentComponent } from './pages/newassignments/edit-newassig
 import { LayoutsComponent } from './layouts/layouts.component';
 import {ModalModule} from "ngx-bootstrap/modal";
 import { ModalRendreAssignementComponent } from './pages/newassignments/modal-rendre-assignement/modal-rendre-assignement.component';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import { ModalRendreAssignementComponent } from './pages/newassignments/modal-re
     NewassignementDetailsComponent,
     EditNewassignmentComponent,
     LayoutsComponent,
-    ModalRendreAssignementComponent
+    ModalRendreAssignementComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,7 @@ import { ModalRendreAssignementComponent } from './pages/newassignments/modal-re
     MatListModule, MatCardModule, MatCheckboxModule, MatSlideToggleModule,
     MatTableModule, MatPaginatorModule,
     ModalModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule, MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

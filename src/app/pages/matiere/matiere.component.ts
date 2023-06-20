@@ -12,6 +12,7 @@ export class MatiereComponent implements OnInit  {
 
   url="matiere"
   matieres:Matiere[] = [];
+  isLoading=true;
   ngOnInit(): void {
     this.getMatieres();
   }
@@ -20,6 +21,7 @@ export class MatiereComponent implements OnInit  {
   getMatieres(){
     this.apiservice.getEntity(this.url).subscribe(data => {
       this.matieres = data.docs;
+      this.isLoading = false
     })
   }
 }

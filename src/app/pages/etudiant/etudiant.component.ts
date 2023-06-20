@@ -17,6 +17,7 @@ export class EtudiantComponent implements OnInit {
    page: number=1;
    limit: number=10;
    totalPages: number = 0;
+  isLoading= true;
   constructor(private apiservice: ApiService) {
   }
 
@@ -33,11 +34,12 @@ export class EtudiantComponent implements OnInit {
       this.page = data.page;
       this.limit = data.limit;
       this.totalPages = data.totalDocs;
-
+      this.isLoading= false;
     })
   }
 
   // Pour mat-paginator
+
   handlePage(event: any) {
     this.page = event.pageIndex+1;
     this.limit = event.pageSize;
