@@ -39,7 +39,7 @@ Chat Gpt nous a aussi été d'un grande aide ainsi que des tutoriel sur youtube.
 - Pour rendre un devoir il suffit de faire un drag and drop sur le devoir et ***un modal apparaitra pour inserer la note et les remarques***.
 - La note doit être compris entre 0 et 20
 - On peut annuler un devoir en faisant un drag and drop dans devoir rendu vers la liste des devoirs à rendre
-- Pour voir les détails d'un devoir on cliquant sur le card.
+- Pour voir les détails d'un devoir il faut cliquer sur le card.
 - On peut également modifier et supprimer un devoir.
 - A noter que dans les details seul l'ADMIN verra les boutons supprimer et modifier.
 
